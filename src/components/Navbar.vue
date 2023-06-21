@@ -1,5 +1,5 @@
 <template>
-  <nav class="shadow" style="position: fixed; top: 0; padding-left: 5%; width: 100%; background: var(--background); z-index: 2">
+  <nav :class="{shadow: showShadow}" style="position: fixed; top: 0; padding-left: 5%; width: 100%; background: var(--background); z-index: 2">
 
     <span @click="toHero" id="right" style="margin-top: min(30px, 3vh);  display: block; float: left">
       <span class="main-link">RW.</span>
@@ -17,9 +17,9 @@
     </span>
 
     <span @click="toggleHamburger" id="left-burger" style="margin-top: min(25px, 1.5vh); position: fixed; right: 5%; padding: 8px; border: 2px solid black; border-radius: 10px">
-      <div class="bar1" :class="{change: showNav , hover: rightHover}"></div>
-      <div class="bar2" :class="{change: showNav , hover: rightHover}"></div>
-      <div class="bar3" :class="{change: showNav , hover: rightHover}"></div>
+      <div class="bar1" :class="{change: showNav}"></div>
+      <div class="bar2" :class="{change: showNav}"></div>
+      <div class="bar3" :class="{change: showNav}"></div>
     </span>
   </nav>
   <div id="nav-list" :class="{change: showNav }">
@@ -57,9 +57,17 @@
 <script>
 export default {
   name: 'Navbar',
+  data: () => {
+    return {
+      showNav: false,
+    }
+  },
+  props: {
+    showShadow: Boolean,
+  },
   methods: {
       toggleHamburger() {
-          this.showNav = !this.showNav;
+        this.showNav = !this.showNav;
       },
       closeNavbar() {
         this.showNav = false;
@@ -92,11 +100,6 @@ export default {
         const element = document.getElementById("Contact");
         element.scrollIntoView({behavior: 'smooth'}); 
       },
-  },
-  data: () => {
-    return {
-      showNav: false,
-    }
   }
 }
 </script>
@@ -125,7 +128,7 @@ export default {
   border: 2px solid black;
   border-radius: 999px;
   font-weight: 400;
-  transition: 0.75s;
+  transition: 0.3s;
   background: linear-gradient(to top, white 50%, var(--background2) 50%) bottom;
   background-size: 100% 200%;
 }

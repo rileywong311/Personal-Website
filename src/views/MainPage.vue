@@ -1,4 +1,6 @@
 <template>
+  <Navbar :showShadow="!intersected"/>
+
   <div id="Hero" class="hero">
     <div>
       <h1>Hi there!</h1>
@@ -9,7 +11,7 @@
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
         Check out my work!
       </span> -->
-      <div style="margin-top: 50px">
+      <div style="margin-top: 60px">
         <MediaLogos />
       </div>
     </div>
@@ -115,8 +117,21 @@
                  />              
   </div>
 
-  <div id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px; background: var(--background2)">
+  <div id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
     <h2>Experience.</h2>
+    <br />
+    <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
+      <ExperienceCard dates="May 2023-Present"
+                      role="Student Developer"
+                      org="Google Summer of Code, IfcOpenShell"
+                      description="My project is working to further bridge the IfcOpenShell and BrickSchema open-source communities and shared mission to evolve the common exchange of building information."
+      />
+      <ExperienceCard dates="April 2023-Present"
+                      role="Webmaster"
+                      org="SCU Association of Computational Machinery"
+                      description=""
+      />
+    </div>
   </div>
 
   
@@ -127,13 +142,41 @@
 </template>
 
 <script>
+import Navbar from '@/components/Navbar.vue';
 import MediaLogos from '@/components/MediaLogos.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
+import ExperienceCard from '@/components/ExperienceCard.vue';
+
 export default {
   name: 'Mainpage',
   components: {
+    Navbar,
     MediaLogos,
     ProjectCard,
+    ExperienceCard,
+  },
+  data: () => {
+    return {
+      observer: null,
+      intersected: false,
+    }
+  },
+  mounted() {
+    let options = {
+      threshold: 1.0,
+    };
+
+    this.observer = new IntersectionObserver(entries => {
+      if (entries[0]){
+        this.intersected = !this.intersected;
+        console.log('here')
+      }
+    }, options);
+
+    this.observer.observe(document.getElementById("Hero"));
+  },
+  destroyed() {
+    this.observer.disconnect();
   },
   methods: {
     async toProjects() {
@@ -155,7 +198,7 @@ export default {
   flex-wrap: wrap-reverse;
   column-gap: 150px;
   row-gap: 40px;
-  min-height: 58vh;
+  min-height: 65vh;
 }
 
 .bio-pic {

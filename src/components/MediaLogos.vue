@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="display: flex; flex-wrap: wrap; gap: 55px">
     <a href="https://www.linkedin.com/in/rileywong510/" target="_blank">
       <img src="@/assets/logos/LinkedIn.svg" alt="LinkedIn link" />
     </a>
@@ -15,7 +15,6 @@
 <style scoped>
 img {
   width: 50px;
-  margin-right: 60px;
   transition: 0.8s;
 }
 
@@ -26,7 +25,6 @@ img:hover {
 @media screen and (max-width: 425px) {
   img {
     width: 40px;
-    margin-right: 50px;
   }
 }
 

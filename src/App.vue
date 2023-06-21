@@ -1,16 +1,12 @@
 <template>
-  <Navbar />
   <router-view/>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-
 
 export default {
   name: 'HomePage',
   components: {
-    Navbar,
   },
 }
 </script>
@@ -65,6 +61,7 @@ p {
 
 .shadow {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: 0.5s;
 }
 
 
