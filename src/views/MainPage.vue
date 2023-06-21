@@ -2,21 +2,22 @@
   <Navbar :showShadow="!intersected"/>
 
   <div id="Hero" class="hero">
-    <div>
-      <h1>Hi there!</h1>
-      <h1>I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
-      <p style="max-width: 70ch;">
+    <div style="overflow: hidden">
+      <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
+      <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
+      <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
         I value independence, communication, and the opportunity to learn from others! Feel free to <span @click="toProjects" class="hero-to-link">check my work below</span> or <span @click="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
         Check out my work!
       </span> -->
-      <div style="margin-top: 60px">
+      <div style="transition: 3s; margin-top: 60px" ref="heroLinks" class="hidden" >
         <MediaLogos />
       </div>
     </div>
     <div class="bio-pic-container">
-      <img src="@/assets/RileyWong.jpg" alt="Bio Picture" class="bio-pic" />
+      <img src="@/assets/RileyWong.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
+      <!-- <button @click="load">Load</button> -->
     </div>
   </div>
 
@@ -124,12 +125,12 @@
       <ExperienceCard dates="May 2023-Present"
                       role="Student Developer"
                       org="Google Summer of Code, IfcOpenShell"
-                      description="My project is working to further bridge the IfcOpenShell and BrickSchema open-source communities and shared mission to evolve the common exchange of building information."
+                      description="The project I am working on involves updating and reworking the smart building entity authoring tool in IfcOpenShell's Blender plugin, BlenderBIM. Here, I am working to further bridge the IfcOpenShell and BrickSchema open-source communities and their shared mission to evolve the common exchange of building information."
       />
       <ExperienceCard dates="April 2023-Present"
                       role="Webmaster"
                       org="SCU Association of Computational Machinery"
-                      description=""
+                      description="ACM is one of the largest student organizations on campus and hosts workshops, guest speakers, and hackathons. I work to mantain, update, and expand ACM's sites and content database."
       />
     </div>
   </div>
@@ -158,22 +159,30 @@ export default {
   data: () => {
     return {
       observer: null,
-      intersected: false,
+      intersected: true,
+      loadInContents: false,
     }
   },
   mounted() {
+    // intersection observer
     let options = {
-      threshold: 1.0,
+      rootMargin: "0px 0px 0px -25px",
+      threshold: 0.8,
     };
-
     this.observer = new IntersectionObserver(entries => {
-      if (entries[0]){
-        this.intersected = !this.intersected;
-        console.log('here')
+      if (entries[0].isIntersecting){
+        this.intersected = true;
+      }
+      else {
+        this.intersected = false;
       }
     }, options);
-
     this.observer.observe(document.getElementById("Hero"));
+
+    // load contents
+    setTimeout(() => {
+      this.load();
+    }, 300)
   },
   destroyed() {
     this.observer.disconnect();
@@ -187,11 +196,26 @@ export default {
       const element = document.getElementById("Contact");
       element.scrollIntoView({behavior: 'smooth'}); 
     },
+    load() {
+      this.$refs.heroHeading1.classList.toggle('outside-screen');
+      this.$refs.heroHeading2.classList.toggle('outside-screen');
+      this.$refs.heroParagraph.classList.toggle('outside-screen')
+      this.$refs.heroImage.classList.toggle('hidden');
+      this.$refs.heroLinks.classList.toggle('hidden');
+    }
   }
 }
 </script>
 
 <style>
+.outside-screen {
+  transform: translateX(-100%);
+}
+
+.hidden {
+  opacity: 0;
+}
+
 .hero {
   margin: 30vh 5% 0;
   display: flex;

@@ -9,9 +9,9 @@
       <div v-else style="width: min(480px, 90vw); height: calc(min(480px, 90vw) / 1.77); background: black" />
       <div style="text-align: right; margin: 25px 0">
         <a :href="link" target="_blank" style="text-decoration: none; color: black">
-          <span style="border: 2px solid black; border-radius: 999px; padding: 5px 25px 5px; margin: 25px">
+          <span style="border: 2px solid black; border-radius: 999px; padding: 5px 25px 5px; margin: 25px; background: var(--a-background); color: var(--a-color)">
             GitHub
-            <img src="@/assets/link.svg" style="margin-left: 5px; width: 15px"/>
+            <img src="@/assets/link.svg" style="margin-left: 5px; width: 15px; filter: invert(var(--a-invert))"/>
           </span>
         </a>
       </div>
@@ -43,6 +43,16 @@ export default {
   height: calc(var(--width) / 1.77);
   /* border: 5px solid black; */
   border: none;
+}
+
+img, span {
+  transition: 1s
+}
+
+a:hover {
+  --a-invert: 1;
+  --a-color: white;
+  --a-background: black;
 }
 
 </style>
