@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div id="Hero" class="hero">
     <div>
       <h1>Hi there!</h1>
       <h1>I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
@@ -18,13 +18,13 @@
     </div>
   </div>
 
-  <div class="about-me">
+  <div id="AboutMe" style="scroll-margin-top: 100px;" class="about-me">
     <h2 style="grid-column: 1">About Me.</h2>
     <div style="grid-column: 2">
       <p>
         I’m Riley, a sophomore computer science student at <span style="color: var(--secondary)">Santa Clara University</span>.
         My passion for programming began in middle school when I first discovered MIT Scratch. 
-        At the time, I didn't even know what a function was, but I somehow made my 1000 lines of needless code work...
+        At the time, I didn't even know what a function was, but I somehow made my 1000 lines of repeated code work...
         Today, I enjoy learning new technologies from REST API's to circuits! 
         In my free time, I’ll be found playing tennis, rendering a new 3D project in Blender, 
         or practicing a finger-style song on the acoustic guitar. 
@@ -82,28 +82,28 @@
     </div>
   </div>
 
-  <div style="margin: 50px 0 50px; padding: 30px 5% 30px">
+  <div id="Projects" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
     <h2 style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
-                 description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience."
+                 description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. Constructed from GPT-4."
                  media="https://www.youtube.com/embed/R8uRnmXLSpo"
                  link="https://github.com/rileywong311/CalHack-AI-2023"
                  />
     <hr class="line-break" />
     <ProjectCard name="Blender Addon: Screen to Text"
-                 description="Renders the current viewport and overlays the screen with the image as ASCII characters."
+                 description="Renders the current viewport and overlays the screen with the image as ASCII characters. This utilized the Blender API's off-screen rendering and custom texture drawing features."
                  media="https://www.youtube.com/embed/iYzjLTMy2-c"
                  link="https://github.com/rileywong311/Blender_ScreenToText"
                  />
     <hr class="line-break" />
     <ProjectCard name="Hands For Help"
-                 description="Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.”"
+                 description="Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.” This was acheived by transfering data user-to-user with QR codes storing JSON."
                  media="https://www.youtube.com/embed/LOz8XoQQS2A"
                  link="https://github.com/rileywong311/H4H-2023"
                  />
     <hr class="line-break" />
     <ProjectCard name="Logistic Map Psuedo-Random Number Generator"
-                 description="An alternative location tracking app that provides independence among adolescents and more privacy for all users by measuring time and distance rather than providing a direct location."
+                 description="Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation. Ran a series of statistical tests on the generator. "
                  media=""
                  link="https://github.com/rileywong311/Logistic-Map-PRNG"
                  />   

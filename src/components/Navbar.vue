@@ -1,7 +1,7 @@
 <template>
   <nav class="shadow" style="position: fixed; top: 0; padding-left: 5%; width: 100%; background: var(--background); z-index: 2">
 
-    <span id="right" style="margin-top: min(30px, 3vh);  display: block; float: left">
+    <span @click="toHero" id="right" style="margin-top: min(30px, 3vh);  display: block; float: left">
       <span class="main-link">RW.</span>
       <br />
       <svg height="7.5px" width="120px">
@@ -10,8 +10,8 @@
     </span>
 
     <span id="left-bar" style="margin-top: min(30px, 3vh); position: fixed; right: 5%;">
-      <span class="nav-link">About Me</span>
-      <span class="nav-link">Projects</span>
+      <span class="nav-link" @click="toAboutMe">About Me</span>
+      <span class="nav-link" @click="toProjects">Projects</span>
       <span class="nav-link">Experience</span>
       <span class="nav-link">Contact</span>
     </span>
@@ -28,16 +28,16 @@
         <span @click="toAboutMe">About Me</span>
       </li>
       <li v-show="showNav">
-        <router-link to="projects" @click="closeNavbar">Projects</router-link>
+        <span @click="toProjects">Projects</span>
       </li>
       <li v-show="showNav">
-        <router-link to="experience" @click="closeNavbar">Experience</router-link> 
+        <span @click="toProjects">Experience</span>
       </li>
       <li v-show="showNav">
-        <router-link to="contact" @click="closeNavbar">Contact</router-link> 
+        <span @click="toProjects">Contact</span>
       </li>
       <li v-show="showNav">
-        <a href="documents/resume.pdf" target="_blank" @click="closeNavbar">Résumé</a> 
+        <a style="text-decoration: none; color: black;" href="documents/resume.pdf" target="_blank" @click="closeNavbar">Résumé</a> 
       </li>
 
     </ul>
@@ -67,7 +67,23 @@ export default {
       },
       closeNavbar() {
         this.showNav = false;
-      }
+      },
+      async toHero() {
+        await this.$router.push('/')
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      async toAboutMe() {
+        await this.$router.push('/')
+        this.closeNavbar();
+        const element = document.getElementById("AboutMe");
+        element.scrollIntoView({behavior: 'smooth'}); 
+      },
+      async toProjects() {
+        await this.$router.push('/')
+        this.closeNavbar();
+        const element = document.getElementById("Projects");
+        element.scrollIntoView({behavior: 'smooth'}); 
+      },
   },
   data: () => {
     return {
