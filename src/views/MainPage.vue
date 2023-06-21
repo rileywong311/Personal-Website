@@ -4,7 +4,7 @@
       <h1>Hi there!</h1>
       <h1>I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p style="max-width: 70ch;">
-        I value independence, communication, and the ability to learn from others! Feel free to <a href="#contact" style="font-weight: 400; color: var(--secondary)">reach out here</a> or <a href="#projects" style="font-weight: 400; color: var(--secondary)">check my work below!</a>
+        I value independence, communication, and the ability to learn from others! Feel free to <a href="#contact" style="font-weight: 400; color: var(--secondary)">reach out to me here</a> or <a href="#projects" style="font-weight: 400; color: var(--secondary)">check my work below!</a>
       </p>
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
         Check out my work!
@@ -29,18 +29,24 @@
         In my free time, I’ll be found playing tennis, rendering a new 3D project in Blender, 
         or practicing a finger-style song on the acoustic guitar. 
       </p>
-      <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none;">
+      <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
         <div class="resume-link">
-          <h3 style="margin: 5px 40px 5px">Résumé <span class="plus">+</span></h3>
+          <div style="margin-top: 5px; margin-left: 35px; font-weight: 400; font-size: 1.75rem">Résumé</div>
+          <div style="margin-left: 32.5px">
+            <svg width="50px" height="50px">
+              <line x1="25%" y1="50%" x2="75%" y2="50%" style="stroke: black; stroke-width: 2px"/>
+              <line x1="50%" y1="25%" x2="50%" y2="75%" style="stroke: black; stroke-width: 2px"/>
+            </svg>
+          </div>
         </div>
       </a>
+
       <div style="display: flex">
-        <h4>Skills:</h4>
+        <h4>Skills</h4>
         <svg width="100%" height="25px">
-          <line x1="5%" y1="50%" x2="95%" y2="50%" style="stroke: black"></line>
+          <line x1="5%" y1="50%" x2="95%" y2="50%" style="stroke: black" />
         </svg>
       </div>
-
       <div class="skills">
         <div>
           <h4 style="margin: 25px 0 10px">Languages:</h4>
@@ -76,18 +82,48 @@
     </div>
   </div>
 
-  <div style="padding: 50px 5% 50px">
-    <h2>Projects.</h2>
+  <div style="margin: 50px 0 50px; padding: 30px 5% 30px">
+    <h2 style="margin-bottom: 50px">Projects.</h2>
+    <ProjectCard name="gourm.ai"
+                 description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience."
+                 media="https://www.youtube.com/embed/R8uRnmXLSpo"
+                 link="https://github.com/rileywong311/CalHack-AI-2023"
+                 />
+    <hr class="line-break" />
+    <ProjectCard name="Blender Addon: Screen to Text"
+                 description="Renders the current viewport and overlays the screen with the image as ASCII characters."
+                 media="https://www.youtube.com/embed/iYzjLTMy2-c"
+                 link="https://github.com/rileywong311/Blender_ScreenToText"
+                 />
+    <hr class="line-break" />
+    <ProjectCard name="Hands For Help"
+                 description="Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.”"
+                 media="https://www.youtube.com/embed/LOz8XoQQS2A"
+                 link="https://github.com/rileywong311/H4H-2023"
+                 />
+    <hr class="line-break" />
+    <ProjectCard name="Logistic Map Psuedo-Random Number Generator"
+                 description="An alternative location tracking app that provides independence among adolescents and more privacy for all users by measuring time and distance rather than providing a direct location."
+                 media=""
+                 link="https://github.com/rileywong311/Logistic-Map-PRNG"
+                 />   
+    <hr class="line-break" />
+    <ProjectCard name="NestNotifications"
+                 description="An alternative location tracking app that provides independence among adolescents and more privacy for all users by measuring time and distance rather than providing a direct location."
+                 media="https://www.youtube.com/embed/39aNTYJP-SQ"
+                 link="https://github.com/rileywong311/INRIX-Hack-22"
+                 />              
   </div>
 </template>
 
 <script>
 import MediaLogos from '@/components/MediaLogos.vue';
-
+import ProjectCard from '@/components/ProjectCard.vue';
 export default {
   name: 'Mainpage',
   components: {
     MediaLogos,
+    ProjectCard,
   }
 }
 </script>
@@ -110,7 +146,7 @@ export default {
   border-radius: 999px;
   object-fit: cover;
   z-index: -1;
-  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
 }
 
 
@@ -153,19 +189,14 @@ export default {
   height: 50px;
   width: 200px;
   font-size: 1.5rem;
-  transition: ease 0.3s;
+  transition: ease 0.5s;
   margin: 50px 0 50px;
   overflow: hidden;
-  
+  display: flex
 }
-
-.plus {
-  padding-left: 10px;
-}
-
 
 .resume-link:hover {
-  width: 240px;
+  width: 250px;
   cursor: pointer;
 }
 
@@ -191,5 +222,10 @@ export default {
   }
 }
 
+.line-break {
+  width: 55%;
+  margin: 35px auto 40px;
+  border: 1px solid black;
+}
 
 </style>

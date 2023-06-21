@@ -1,8 +1,8 @@
 <template>
-  <nav style="position: fixed; top: 0; padding-left: 5%; width: 100%; background: var(--background); z-index: 2">
+  <nav class="shadow" style="position: fixed; top: 0; padding-left: 5%; width: 100%; background: var(--background); z-index: 2">
 
     <span id="right" style="margin-top: min(30px, 3vh);  display: block; float: left">
-      <span class="main-link">α RW.</span>
+      <span class="main-link">RW.</span>
       <br />
       <svg height="7.5px" width="120px">
         <line x1="0%" y1="50%" x2="100%" y2="50%" style="stroke: black"></line>
@@ -101,15 +101,15 @@ export default {
   border: 2px solid black;
   border-radius: 999px;
   font-weight: 400;
-  transition: 0.5s;
-  background: linear-gradient(to left, white 50%, var(--background2) 50%) right;
-  background-size: 200% 100%;
+  transition: 0.75s;
+  background: linear-gradient(to top, white 50%, var(--background2) 50%) bottom;
+  background-size: 100% 200%;
 }
 
 .nav-link:hover {
   /* background: var(--secondary);
   color: white; */
-  background-position: left;
+  background-position: top;
   cursor: pointer;
 }
 
