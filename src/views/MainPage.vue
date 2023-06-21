@@ -4,7 +4,7 @@
       <h1>Hi there!</h1>
       <h1>I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p style="max-width: 70ch;">
-        I value independence, communication, and the ability to learn from others! Feel free to <a href="#contact" style="font-weight: 400; color: var(--secondary)">reach out to me here</a> or <a href="#projects" style="font-weight: 400; color: var(--secondary)">check my work below!</a>
+        I value independence, communication, and the opportunity to learn from others! Feel free to <span @click="toProjects" class="hero-to-link">check my work below</span> or <span @click="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
         Check out my work!
@@ -114,6 +114,16 @@
                  link="https://github.com/rileywong311/INRIX-Hack-22"
                  />              
   </div>
+
+  <div id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px; background: var(--background2)">
+    <h2>Experience.</h2>
+  </div>
+
+  
+  <div id="Contact" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
+    <h2>Contact.</h2>
+  </div>
+
 </template>
 
 <script>
@@ -124,6 +134,16 @@ export default {
   components: {
     MediaLogos,
     ProjectCard,
+  },
+  methods: {
+    async toProjects() {
+        const element = document.getElementById("Projects");
+        element.scrollIntoView({behavior: 'smooth'}); 
+      },
+    async toContact() {
+      const element = document.getElementById("Contact");
+      element.scrollIntoView({behavior: 'smooth'}); 
+    },
   }
 }
 </script>
@@ -149,6 +169,17 @@ export default {
   box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
 }
 
+.hero-to-link {
+  font-weight: 300;
+  color: var(--secondary);
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+.hero-to-link:hover {
+  cursor: pointer;
+  background: var(--background2);
+}
 
 @media screen and (max-width: 1100px) {
   .hero {

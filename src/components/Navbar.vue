@@ -12,8 +12,8 @@
     <span id="left-bar" style="margin-top: min(30px, 3vh); position: fixed; right: 5%;">
       <span class="nav-link" @click="toAboutMe">About Me</span>
       <span class="nav-link" @click="toProjects">Projects</span>
-      <span class="nav-link">Experience</span>
-      <span class="nav-link">Contact</span>
+      <span class="nav-link" @click="toExperience">Experience</span>
+      <span class="nav-link" @click="toContact">Contact</span>
     </span>
 
     <span @click="toggleHamburger" id="left-burger" style="margin-top: min(25px, 1.5vh); position: fixed; right: 5%; padding: 8px; border: 2px solid black; border-radius: 10px">
@@ -31,15 +31,11 @@
         <span @click="toProjects">Projects</span>
       </li>
       <li v-show="showNav">
-        <span @click="toProjects">Experience</span>
+        <span @click="toExperience">Experience</span>
       </li>
       <li v-show="showNav">
-        <span @click="toProjects">Contact</span>
+        <span @click="toContact">Contact</span>
       </li>
-      <li v-show="showNav">
-        <a style="text-decoration: none; color: black;" href="documents/resume.pdf" target="_blank" @click="closeNavbar">Résumé</a> 
-      </li>
-
     </ul>
   </div>
 
@@ -82,6 +78,18 @@ export default {
         await this.$router.push('/')
         this.closeNavbar();
         const element = document.getElementById("Projects");
+        element.scrollIntoView({behavior: 'smooth'}); 
+      },
+      async toExperience() {
+        await this.$router.push('/')
+        this.closeNavbar();
+        const element = document.getElementById("Experience");
+        element.scrollIntoView({behavior: 'smooth'}); 
+      },
+      async toContact() {
+        await this.$router.push('/')
+        this.closeNavbar();
+        const element = document.getElementById("Contact");
         element.scrollIntoView({behavior: 'smooth'}); 
       },
   },
@@ -164,7 +172,7 @@ export default {
 #nav-list ul {
   position: fixed;
   top: 0;
-  padding: 12.5vh 20% 0;
+  padding: 20vh 20% 0;
   margin: 0;
   z-index: 1;
   visibility: hidden;

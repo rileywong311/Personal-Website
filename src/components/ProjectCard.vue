@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow" style="display: flex; flex-wrap: wrap-reverse; justify-content: center; column-gap: 75px; max-width: 1200px; margin: auto; padding: 25px; border-radius: 25px">
+  <div style="display: flex; flex-wrap: wrap-reverse; justify-content: center; column-gap: 75px; max-width: 1200px; margin: auto;">
     <div style="width: min(500px, 90vw)">
       <h3>{{ name }}</h3>
       <p>{{ description }}</p>
