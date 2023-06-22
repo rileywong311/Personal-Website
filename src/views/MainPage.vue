@@ -244,12 +244,12 @@ export default {
 }
 
 .hero {
-  margin: 30vh 5% 0;
+  margin: min(500px, 30vh) 5% 0;
   display: flex;
   flex-wrap: wrap-reverse;
   column-gap: 150px;
   row-gap: 40px;
-  min-height: min(65vh, 1200px);
+  min-height: min(65vh, 800px);
 }
 
 .bio-pic {
