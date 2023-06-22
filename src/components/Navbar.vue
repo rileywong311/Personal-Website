@@ -14,6 +14,7 @@
       <span class="nav-link" @click="toProjects">Projects</span>
       <span class="nav-link" @click="toExperience">Experience</span>
       <span class="nav-link" @click="toContact">Contact</span>
+      <span>{{ currentSection }}</span>
     </span>
 
     <span @click="toggleHamburger" id="left-burger" style="margin-top: min(25px, 1.5vh); position: fixed; right: 5%; padding: 8px; border: 2px solid black; border-radius: 10px">
@@ -60,10 +61,17 @@ export default {
   data: () => {
     return {
       showNav: false,
+      sections: {
+        'about': 1,
+        'projects': 2,
+        'experience': 3,
+        'contact': 4,
+      }
     }
   },
   props: {
     showShadow: Boolean,
+    currentSection: Number,
   },
   methods: {
       toggleHamburger() {
@@ -129,14 +137,11 @@ export default {
   border-radius: 999px;
   font-weight: 400;
   transition: 0.3s;
-  background: linear-gradient(to top, white 50%, var(--background2) 50%) bottom;
-  background-size: 100% 200%;
 }
 
 .nav-link:hover {
-  /* background: var(--secondary);
-  color: white; */
-  background-position: top;
+  background: var(--secondary);
+  color: white;
   cursor: pointer;
 }
 

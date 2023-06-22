@@ -8,19 +8,19 @@
     <input type="hidden" name="_subject" value="New website submission">
       <span>
         <h4><label for="First">First name:</label></h4>
-        <input name="name" v-model="first" id="First" type="text" placeholder="Enter your first name" required style="width: min(175px, 55vw)">
+        <input name="name" id="First" type="text" placeholder="Enter your first name" required style="width: min(175px, 55vw)">
       </span>
       <span>
         <h4><label for="Last">Last name:</label></h4>
-        <input name="last name" v-model="last" id="Last" type="text" placeholder="Enter your last name" required style="width: min(175px, 55vw)">
+        <input name="last&nbsp;name" id="Last" type="text" placeholder="Enter your last name" style="width: min(175px, 55vw)">
       </span>
       <span>
         <h4><label for="Email">Email:</label></h4>
-        <input name="email" v-model="email" id="Email" type="email" placeholder="Enter your email" style="width: min(475px, 75vw)">
+        <input name="email" id="Email" type="email" placeholder="Enter your email" style="width: min(475px, 75vw)">
       </span>
       <span>
         <h4><label for="Message">Message:</label></h4>
-        <textarea name="message" v-model="message" id="Message" placeholder="Ex) You're website is so cool!" required rows="5" cols="999" style="max-width: min(475px, 75vw); max-height: 300px"></textarea>
+        <textarea name="message" id="Message" placeholder="Ex) You're website is so cool!" required rows="5" cols="999" style="max-width: min(475px, 75vw); max-height: 300px"></textarea>
       </span>
       <input type="submit" class="submit-button shadow" value="Submit">
     </form>
@@ -38,28 +38,10 @@ export default {
   name: 'FormCard',
   data: () => {
     return {
-      name: '',
       url: URL_NAME,
     }
-  },
-  methods: {
-    submit() {
-      console.log(this.first);
-      console.log(this.last);
-      console.log(this.email);
-      console.log(this.message);
-      this.$refs.form.reset();
-      this.openDialog();
-      return false;
-      },
-      openDialog() {
-        this.$refs.dialog.showModal();
-      },
-      closeDialog() {
-        this.$refs.dialog.close();
-      }
-    }
   }
+}
 </script>
 
 
@@ -81,6 +63,8 @@ textarea {
   font-size: 1rem;
   color: white;
   transition: 0.25s;
+  margin-top: auto;
+  margin-right: auto;
   padding: 7.5px 20px 7.5px;
   border: 1px solid rgb(174, 174, 174);
   border-radius: 10px;

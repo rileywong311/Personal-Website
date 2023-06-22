@@ -1,9 +1,9 @@
 <template>
-  <Navbar :showShadow="!intersected"/>
+  <Navbar :showShadow="!intersected" :currentSection="currentSection"/>
 
   <div id="HeroPadding" class="hero-padding"/>
-  <div id="Hero" class="hero">
-    <div style="overflow: hidden">
+  <section id="Hero" class="hero">
+    <div id="SectionHead" class="0" style="overflow: hidden">
       <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
@@ -20,10 +20,10 @@
       <img src="@/assets/biopic.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
       <!-- <button @click="load">Load</button> -->
     </div>
-  </div>
+  </section>
 
-  <div id="AboutMe" style="scroll-margin-top: 100px;" class="about-me">
-    <h2 style="grid-column: 1">About Me.</h2>
+  <section id="AboutMe" style="scroll-margin-top: 100px;" class="about-me">
+    <h2 id="SectionHead" class="1" style="grid-column: 1">About Me.</h2>
     <div style="grid-column: 2">
       <p>
         I’m Riley, a sophomore computer science student at <span style="color: var(--secondary)">Santa Clara University</span>.
@@ -86,10 +86,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="Projects" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
-    <h2 style="margin-bottom: 50px">Projects.</h2>
+  <section id="Projects" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
+    <h2 id="SectionHead" class="2" style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
                  description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. I primarily worked on the frontend, but I also communicated prompts with the backend team as to parse GPT-4 effectively."
                  type="vid"
@@ -124,10 +124,10 @@
                  media="https://www.youtube.com/embed/39aNTYJP-SQ"
                  link="https://github.com/rileywong311/INRIX-Hack-22"
                  />              
-  </div>
+  </section>
 
-  <div id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
-    <h2>Experience.</h2>
+  <section id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
+    <h2 id="SectionHead" class="3">Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
       <ExperienceCard dates="May 2023-Present" role="Student Developer" org="Google Summer of Code, IfcOpenShell">
@@ -147,11 +147,11 @@
         </p>
       </ExperienceCard>
     </div>
-  </div>
+  </section>
 
   
-  <div id="Contact" class="contact" style="scroll-margin-top: 100px ">
-    <h2 style="grid-column: 1">Contact.</h2>
+  <section id="Contact" class="contact" style="scroll-margin-top: 100px ">
+    <h2 id="SectionHead" class="4" style="grid-column: 1">Contact.</h2>
     <div style="grid-column: 2; margin: 50px auto">
       <FormCard  />
       <div style="margin: auto; text-align: center;">
@@ -159,9 +159,7 @@
         <MediaLogos :center="true" />
       </div>
     </div>
-  </div>
-
-  <router-link to="received">here</router-link>
+  </section>
 
   <Footer />
 
@@ -187,25 +185,50 @@ export default {
   },
   data: () => {
     return {
-      observer: null,
+      navObserver: null,
       intersected: true,
+      sectionObserver: null,
+      currentSection: 0,
+      sections: {
+        'top': 0,
+        'about': 1,
+        'projects': 2,
+        'experience': 3,
+        'contact': 4,
+      }
     }
   },
   mounted() {
     // intersection observer
-    let options = {
-      rootMargin: "0px 0px 0px -25px",
-      threshold: 0.8,
-    };
-    this.observer = new IntersectionObserver(entries => {
+    this.navObserver = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         this.intersected = true;
       }
       else {
         this.intersected = false;
       }
-    }, options);
-    this.observer.observe(document.getElementById("HeroPadding"));
+    }, {threshold: 0.8});
+    this.navObserver.observe(document.getElementById("HeroPadding"));
+
+    this.sectionObserver = new IntersectionObserver(entries => {
+      let allSections = document.querySelectorAll("#SectionHead");
+      allSections.forEach(section => {
+        const position = section.getBoundingClientRect();
+        if (position.top >= 0 && position.bottom <= window.innerHeight) {
+          allSections.forEach(s => {
+            s.classList.remove('test');
+          })
+          section.classList.add('test');
+        }
+      })
+    }, {threshold: 1});
+    let allSections = document.querySelectorAll("#SectionHead")
+    allSections.forEach(section => {
+      section.classList.add('test')
+      this.sectionObserver.observe(section);
+    })
+    
+    this.currentSection = this.sections.top
 
     this.load();
   },
@@ -237,6 +260,10 @@ export default {
 </script>
 
 <style>
+.test {
+  background: red
+}
+
 .outside-screen {
   transform: translateX(-100%);
 }
