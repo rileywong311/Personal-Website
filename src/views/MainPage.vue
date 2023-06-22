@@ -149,13 +149,14 @@
     <div style="grid-column: 2; margin: 50px auto">
       <FormCard  />
       <div style="margin: auto; text-align: center;">
-        <br />
-        <p>rnwong@scu.edu</p>
-        <br />
+        <a href="mailto:rnwong@scu.edu" style="text-decoration: none"><div style="margin: 50px;"><span class="email">rnwong@scu.edu</span></div></a>
         <MediaLogos :center="true" />
       </div>
     </div>
   </div>
+
+  <Footer />
+
 </template>
 
 <script>
@@ -164,6 +165,7 @@ import MediaLogos from '@/components/MediaLogos.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import ExperienceCard from '@/components/ExperienceCard.vue';
 import FormCard from '@/components/FormCard.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'Mainpage',
@@ -172,7 +174,8 @@ export default {
     MediaLogos,
     ProjectCard,
     ExperienceCard,
-    FormCard
+    FormCard,
+    Footer,
   },
   data: () => {
     return {
@@ -362,5 +365,18 @@ export default {
     display: block;
   }
 }
+
+.email {
+  color: var(--secondary);
+  padding: 10px 30px 10px;
+  border-radius: 999px;
+  transition: 0.5s;
+}
+
+.email:hover {
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
 
 </style>
