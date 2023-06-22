@@ -161,8 +161,6 @@
     </div>
   </div>
 
-  <router-link to="received">here</router-link>
-
   <Footer />
 
 </template>
@@ -188,22 +186,16 @@ export default {
   data: () => {
     return {
       observer: null,
-      intersected: true,
+      intersected: false,
     }
   },
   mounted() {
     // intersection observer
     let options = {
-      rootMargin: "0px 0px 0px -25px",
       threshold: 0.8,
     };
     this.observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        this.intersected = true;
-      }
-      else {
-        this.intersected = false;
-      }
+      this.intersected = !this.intersected;
     }, options);
     this.observer.observe(document.getElementById("HeroPadding"));
 
