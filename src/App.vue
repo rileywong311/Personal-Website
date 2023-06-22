@@ -70,6 +70,18 @@ p {
     font-size: 2rem;
   }
 
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
   p {
     font-size: 0.875rem;
   }

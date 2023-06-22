@@ -32,17 +32,19 @@
         In my free time, I’ll be found playing tennis, rendering a new 3D project in Blender, 
         or practicing a finger-style song on the acoustic guitar. 
       </p>
-      <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
-        <div class="resume-link">
-          <div style="margin-top: 5px; margin-left: 35px; font-weight: 400; font-size: 1.75rem">Résumé</div>
-          <div style="margin-left: 32.5px">
-            <svg width="50px" height="50px">
-              <line x1="25%" y1="50%" x2="75%" y2="50%" style="stroke: black; stroke-width: 2px"/>
-              <line x1="50%" y1="25%" x2="50%" y2="75%" style="stroke: black; stroke-width: 2px"/>
-            </svg>
+      <div style="width: 200px">
+        <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
+          <div class="resume-link">
+            <div style="margin-top: 5px; margin-left: 35px; font-weight: 400; font-size: 1.75rem">Résumé</div>
+            <div style="margin-left: 32.5px">
+              <svg width="50px" height="50px">
+                <line x1="25%" y1="50%" x2="75%" y2="50%" style="stroke: black; stroke-width: 2px"/>
+                <line x1="50%" y1="25%" x2="50%" y2="75%" style="stroke: black; stroke-width: 2px"/>
+              </svg>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
 
       <div style="display: flex">
         <h4>Skills</h4>
@@ -122,24 +124,38 @@
     <h2>Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
-      <ExperienceCard dates="May 2023-Present"
-                      role="Student Developer"
-                      org="Google Summer of Code, IfcOpenShell"
-                      description="The project I am working on involves updating and reworking the smart building entity authoring tool in IfcOpenShell's Blender plugin, BlenderBIM. Here, I am working to further bridge the IfcOpenShell and BrickSchema open-source communities and their shared mission to evolve the common exchange of building information."
-      />
-      <ExperienceCard dates="April 2023-Present"
-                      role="Webmaster"
-                      org="SCU Association of Computational Machinery"
-                      description="ACM is one of the largest student organizations on campus and hosts workshops, guest speakers, and hackathons. I work to mantain, update, and expand ACM's sites and content database."
-      />
+      <ExperienceCard dates="May 2023-Present" role="Student Developer" org="Google Summer of Code, IfcOpenShell">
+        <p>
+          The project I am working on involves updating and reworking the smart building entity authoring tool in IfcOpenShell's Blender plugin, <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
+          Here, I am working to further bridge the IFC and <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures and their shared mission to evolve the common exchange of building information.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard dates="April 2023-Present" role="Webmaster" org="SCU Association of Computational Machinery">
+        <p>
+          ACM is one of the largest student organizations on campus and is the primary computer science club that hosts workshops, guest speakers, and hackathons. 
+          I work to mantain, update, and expand ACM's sites and content database.
+          Check out the ACM sites
+          <a href="http://acm.engr.scu.edu/#/" target="_blank" style="color: var(--secondary)">here</a>,
+          <a href="https://hackforhumanity.io/" target="_blank" style="color: var(--secondary)">here</a>,
+          and <a href="http://acm.engr.scu.edu/inrix/" target="_blank" style="color: var(--secondary)">here!</a>
+        </p>
+      </ExperienceCard>
     </div>
   </div>
 
   
-  <div id="Contact" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
-    <h2>Contact.</h2>
+  <div id="Contact" class="contact" style="scroll-margin-top: 100px ">
+    <h2 style="grid-column: 1">Contact.</h2>
+    <div style="grid-column: 2; margin: 50px auto">
+      <FormCard  />
+      <div style="margin: auto; text-align: center;">
+        <br />
+        <p>rnwong@scu.edu</p>
+        <br />
+        <MediaLogos :center="true" />
+      </div>
+    </div>
   </div>
-
 </template>
 
 <script>
@@ -147,6 +163,7 @@ import Navbar from '@/components/Navbar.vue';
 import MediaLogos from '@/components/MediaLogos.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import ExperienceCard from '@/components/ExperienceCard.vue';
+import FormCard from '@/components/FormCard.vue';
 
 export default {
   name: 'Mainpage',
@@ -155,6 +172,7 @@ export default {
     MediaLogos,
     ProjectCard,
     ExperienceCard,
+    FormCard
   },
   data: () => {
     return {
@@ -180,9 +198,14 @@ export default {
     this.observer.observe(document.getElementById("Hero"));
 
     // load contents
-    setTimeout(() => {
+    document.onreadystatechange = () => { 
+    if (document.readyState == "complete") { 
       this.load();
-    }, 300)
+    } 
+  }
+    // setTimeout(() => {
+    //   this.load();
+    // }, 300)
   },
   destroyed() {
     this.observer.disconnect();
@@ -226,7 +249,7 @@ export default {
 }
 
 .bio-pic {
-  --size: 250px;
+  --size: 200px;
   width: var(--size);
   height: var(--size);
   border: 4px solid var(--secondary);
@@ -324,6 +347,20 @@ export default {
   width: 55%;
   margin: 35px auto 40px;
   border: 1px solid black;
+}
+
+.contact {
+  margin: 50px 0 50px;
+  padding: 30px 5% 30px;
+  display: grid;
+  grid-auto-rows: auto;
+  gap: min(400px, 20vw);
+}
+
+@media screen and (max-width: 1200px) {
+  .contact {
+    display: block;
+  }
 }
 
 </style>

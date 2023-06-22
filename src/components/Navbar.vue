@@ -191,7 +191,7 @@ export default {
 
 #nav-list li {
   font-size: 2rem;
-  margin: 10px 0 10px;
+  margin: 20px 0 20px;
   font-weight: 500;
 }
 

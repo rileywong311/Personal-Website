@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; flex-wrap: wrap; gap: 55px">
+  <div style="display: flex; flex-wrap: wrap; gap: 55px" :class="{center: center}">
     <a href="https://www.linkedin.com/in/rileywong510/" target="_blank">
       <img src="@/assets/logos/LinkedIn.svg" alt="LinkedIn link" />
     </a>
@@ -12,6 +12,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'FormCard',
+  props: {
+    center: Boolean
+  }
+  }
+</script>
+
 <style scoped>
 img {
   width: 50px;
@@ -20,6 +29,10 @@ img {
 
 img:hover {
   transform: scale(1.2);
+}
+
+.center {
+  justify-content: center;
 }
 
 @media screen and (max-width: 425px) {

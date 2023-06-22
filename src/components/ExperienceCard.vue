@@ -6,7 +6,7 @@
     <div>
       <h3 style="margin: 5px 0">{{ role }}</h3>
       <h4>{{ org }}</h4>
-      <p>{{ description }}</p>
+      <slot />
     </div>
   </div>
 </template>
