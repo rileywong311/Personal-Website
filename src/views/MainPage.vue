@@ -206,9 +206,10 @@ export default {
       this.load();
     } 
   }
-    // setTimeout(() => {
-    //   this.load();
-    // }, 300)
+
+  console.log('HERE')
+  console.log(process.env.VUE_APP_EMAIL_API_KEY)
+
   },
   destroyed() {
     this.observer.disconnect();
