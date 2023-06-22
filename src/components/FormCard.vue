@@ -4,7 +4,7 @@
           action="https://formsubmit.co/5c607dcce256a2552b8de66e7fc569bb" method="POST">
     <input type="text" name="_honey" style="display:none">
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="http://localhost:8080/received">
+    <input type="hidden" name="_next" :value="this.url + '/received'">
     <input type="hidden" name="_subject" value="New website submission">
       <span>
         <h4><label for="First">First name:</label></h4>
@@ -32,11 +32,14 @@
 
 
 <script>
+import { URL_NAME } from '@/myurl.js';
+
 export default {
   name: 'FormCard',
   data: () => {
     return {
       name: '',
+      url: URL_NAME,
     }
   },
   methods: {
