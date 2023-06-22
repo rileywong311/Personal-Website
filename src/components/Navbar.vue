@@ -1,7 +1,7 @@
 <template>
-  <nav :class="{shadow: showShadow}" style="position: fixed; top: 0; padding-left: 5%; width: 100%; background: var(--background); z-index: 2">
+  <nav :class="{shadow: showShadow}" style="position: fixed; top: 0; left 0; width: min(100%, 1800px); background: var(--background); z-index: 2">
 
-    <span @click="toHero" id="right" style="margin-top: min(30px, 3vh);  display: block; float: left">
+    <span @click="toHero" id="right" style="margin-top: min(30px, 3vh); display: block; float: left; margin-left: 5%">
       <span class="main-link">RW.</span>
       <br />
       <svg height="7.5px" width="120px">
@@ -9,7 +9,7 @@
       </svg>
     </span>
 
-    <span id="left-bar" style="margin-top: min(30px, 3vh); position: fixed; right: 5%;">
+    <span id="left-bar" style="margin-top: min(30px, 3vh); display: block; float: right; margin-right: 5%">
       <span class="nav-link" @click="toAboutMe">About Me</span>
       <span class="nav-link" @click="toProjects">Projects</span>
       <span class="nav-link" @click="toExperience">Experience</span>
@@ -202,7 +202,7 @@ export default {
 
 @media screen and (max-width: 900px ) {
   #left-bar {
-    display: none;
+    display: none !important;
   }
 
   #left-burger {

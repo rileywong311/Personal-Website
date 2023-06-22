@@ -249,7 +249,7 @@ export default {
   flex-wrap: wrap-reverse;
   column-gap: 150px;
   row-gap: 40px;
-  min-height: 65vh;
+  min-height: min(65vh, 1200px);
 }
 
 .bio-pic {
