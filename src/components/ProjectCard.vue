@@ -5,7 +5,8 @@
       <p>{{ description }}</p>
     </div>
     <div>
-      <iframe v-if="media" class="video" allow="fullscreen;" :src="media" />
+      <iframe v-if="media && type === 'vid'" class="media shadow" allow="fullscreen;" :src="media" alt="video"/>
+      <img v-else-if="media && type === 'img'" class="media shadow" :src="require(`../assets/${media}`)" alt="picture"/>
       <div v-else style="width: min(480px, 90vw); height: calc(min(480px, 90vw) / 1.77); background: black" />
       <div style="text-align: right; margin: 25px 0">
         <a :href="link" target="_blank" style="text-decoration: none; color: black">
@@ -26,6 +27,7 @@ export default {
   name: 'ProjectCard',
   props:  {
     media: String,
+    type: String,
     name: String,
     description: String,
     link: String,
@@ -36,13 +38,14 @@ export default {
 
 
 <style scoped>
-.video {
+.media {
   --width: min(480px, 90vw);
   
   width: var(--width);
   height: calc(var(--width) / 1.77);
   /* border: 5px solid black; */
   border: none;
+  object-fit: cover;
 }
 
 img, span {

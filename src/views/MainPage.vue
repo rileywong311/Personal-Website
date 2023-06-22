@@ -1,6 +1,7 @@
 <template>
   <Navbar :showShadow="!intersected"/>
 
+  <div id="HeroPadding" class="hero-padding"/>
   <div id="Hero" class="hero">
     <div style="overflow: hidden">
       <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
@@ -16,7 +17,7 @@
       </div>
     </div>
     <div class="bio-pic-container">
-      <img src="@/assets/RileyWong.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
+      <img src="@/assets/biopic.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
       <!-- <button @click="load">Load</button> -->
     </div>
   </div>
@@ -26,7 +27,7 @@
     <div style="grid-column: 2">
       <p>
         I’m Riley, a sophomore computer science student at <span style="color: var(--secondary)">Santa Clara University</span>.
-        My passion for programming began in middle school when I first discovered MIT Scratch. 
+        My passion for programming began in middle school when I first discovered MIT Scratch.
         At the time, I didn't even know what a function was, but I somehow made my 1000 lines of repeated code work...
         Today, I enjoy learning new technologies from REST API's to circuits! 
         In my free time, I’ll be found playing tennis, rendering a new 3D project in Blender, 
@@ -55,7 +56,7 @@
       <div class="skills">
         <div>
           <h4 style="margin: 25px 0 10px">Languages:</h4>
-          <ul>
+          <ul style="list-style-type: circle">
             <li>Python</li>
             <li>C++</li>
             <li>JavaScript</li>
@@ -65,7 +66,7 @@
         </div>
         <div>
           <h4 style="margin: 25px 0 10px">Frameworks:</h4>
-          <ul>
+          <ul style="list-style-type: circle">
             <li>Flask</li>
             <li>Vue.js</li>
             <li>React.js</li>
@@ -75,7 +76,7 @@
         </div>
         <div>
           <h4 style="margin: 25px 0 10px">Tools:</h4>
-          <ul>
+          <ul style="list-style-type: circle">
             <li>VS Code</li>
             <li>GitHub</li>
             <li>Jupyter</li>
@@ -90,31 +91,36 @@
   <div id="Projects" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
     <h2 style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
-                 description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. Constructed from GPT-4."
+                 description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. I primarily worked on the frontend, but I also communicated prompts with the backend team as to parse GPT-4 effectively."
+                 type="vid"
                  media="https://www.youtube.com/embed/R8uRnmXLSpo"
                  link="https://github.com/rileywong311/CalHack-AI-2023"
                  />
     <hr class="line-break" />
     <ProjectCard name="Blender Addon: Screen to Text"
-                 description="Renders the current viewport and overlays the screen with the image as ASCII characters. This utilized the Blender API's off-screen rendering and custom texture drawing features."
+                 description="This plugin renders the current viewport with the image as ASCII characters based on brightness values. This utilized the Blender API's off-screen rendering, custom texture drawing, and developer tools for authoring the interface."
+                 type="vid"
                  media="https://www.youtube.com/embed/iYzjLTMy2-c"
                  link="https://github.com/rileywong311/Blender_ScreenToText"
                  />
     <hr class="line-break" />
     <ProjectCard name="Hands For Help"
-                 description="Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.” This was acheived by transfering data user-to-user with QR codes storing JSON."
+                 description="Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.” This was acheived by transfering data user-to-user with QR codes storing JSON. I worked on the backend to locate and parse highest-rated locations."
+                 type="vid"
                  media="https://www.youtube.com/embed/LOz8XoQQS2A"
                  link="https://github.com/rileywong311/H4H-2023"
                  />
     <hr class="line-break" />
     <ProjectCard name="Logistic Map Psuedo-Random Number Generator"
                  description="Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation. Ran a series of statistical tests on the generator. "
-                 media=""
+                 type="img"
+                 media="LogisticMap.png"
                  link="https://github.com/rileywong311/Logistic-Map-PRNG"
                  />   
     <hr class="line-break" />
     <ProjectCard name="NestNotifications"
-                 description="An alternative location tracking app that provides independence among adolescents and more privacy for all users by measuring time and distance rather than providing a direct location."
+                 description="An alternative location tracking app that provides independence among adolescents and more privacy for all users by measuring time and distance rather than providing a direct location. I worked on the backend to record travel-time polygons and location within the zone."
+                 type="vid"
                  media="https://www.youtube.com/embed/39aNTYJP-SQ"
                  link="https://github.com/rileywong311/INRIX-Hack-22"
                  />              
@@ -155,6 +161,8 @@
     </div>
   </div>
 
+  <router-link to="received">here</router-link>
+
   <Footer />
 
 </template>
@@ -181,7 +189,6 @@ export default {
     return {
       observer: null,
       intersected: true,
-      loadInContents: false,
     }
   },
   mounted() {
@@ -191,25 +198,16 @@ export default {
       threshold: 0.8,
     };
     this.observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting){
+      if (entries[0].isIntersecting) {
         this.intersected = true;
       }
       else {
         this.intersected = false;
       }
     }, options);
-    this.observer.observe(document.getElementById("Hero"));
+    this.observer.observe(document.getElementById("HeroPadding"));
 
-    // load contents
-    document.onreadystatechange = () => { 
-    if (document.readyState == "complete") { 
-      this.load();
-    } 
-  }
-
-  console.log('HERE')
-  console.log(process.env.VUE_APP_EMAIL_API_KEY)
-
+    this.load();
   },
   destroyed() {
     this.observer.disconnect();
@@ -223,12 +221,16 @@ export default {
       const element = document.getElementById("Contact");
       element.scrollIntoView({behavior: 'smooth'}); 
     },
-    load() {
-      this.$refs.heroHeading1.classList.toggle('outside-screen');
-      this.$refs.heroHeading2.classList.toggle('outside-screen');
-      this.$refs.heroParagraph.classList.toggle('outside-screen')
-      this.$refs.heroImage.classList.toggle('hidden');
-      this.$refs.heroLinks.classList.toggle('hidden');
+    async load() {
+      setTimeout( () => {
+        this.$refs.heroHeading1.classList.remove('outside-screen');
+        this.$refs.heroHeading2.classList.remove('outside-screen');
+        setTimeout( () => {
+          this.$refs.heroParagraph.classList.remove('outside-screen')
+          this.$refs.heroImage.classList.remove('hidden');
+          this.$refs.heroLinks.classList.remove('hidden');
+        }, 800)
+      }, 200)
     }
   }
 }
@@ -243,8 +245,12 @@ export default {
   opacity: 0;
 }
 
+.hero-padding {
+  height: min(500px, 30vh)
+}
+
 .hero {
-  margin: min(500px, 30vh) 5% 0;
+  margin: 0 5% 0;
   display: flex;
   flex-wrap: wrap-reverse;
   column-gap: 150px;
@@ -276,8 +282,8 @@ export default {
 }
 
 @media screen and (max-width: 1100px) {
-  .hero {
-    margin: 20vh 5% 0;
+  .hero-padding {
+    height: max(15vh, 80px);
   }
 }
 
@@ -349,7 +355,7 @@ export default {
 
 .line-break {
   width: 55%;
-  margin: 35px auto 40px;
+  margin: 75px auto 100px;
   border: 1px solid black;
 }
 

@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '../views/MainPage.vue'
+import ReceivedPage from '../views/ReceivedPage.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: MainPage
+  },
+  {
+    path: '/received',
+    name: 'received',
+    component: ReceivedPage
   },
 ]
 
