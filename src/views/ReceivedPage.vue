@@ -3,7 +3,7 @@
     <h1 style="font-weight: 300">
       📩
       <br />
-      Recieved. 
+      Received. 
       <br />
       <span style="color: var(--secondary); font-weight: 500;">Thank you!</span>
     </h1>
