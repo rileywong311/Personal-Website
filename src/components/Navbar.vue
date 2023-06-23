@@ -10,11 +10,10 @@
     </span>
 
     <span id="left-bar" style="margin-top: min(30px, 3vh); display: block; float: right; margin-right: 5%">
-      <span class="nav-link" @click="toAboutMe">About Me</span>
-      <span class="nav-link" @click="toProjects">Projects</span>
-      <span class="nav-link" @click="toExperience">Experience</span>
-      <span class="nav-link" @click="toContact">Contact</span>
-      <span>{{ currentSection }}</span>
+      <span class="nav-link" :class="{current: currentSection == sections.about}" @click="toAboutMe">About Me</span>
+      <span class="nav-link" :class="{current: currentSection == sections.projects}" @click="toProjects">Projects</span>
+      <span class="nav-link" :class="{current: currentSection == sections.experience}" @click="toExperience">Experience</span>
+      <span class="nav-link" :class="{current: currentSection == sections.contact}" @click="toContact">Contact</span>
     </span>
 
     <span @click="toggleHamburger" id="left-burger" style="margin-top: min(25px, 1.5vh); position: fixed; right: 5%; padding: 8px; border: 2px solid black; border-radius: 10px">
@@ -62,6 +61,7 @@ export default {
     return {
       showNav: false,
       sections: {
+        'top': 0,
         'about': 1,
         'projects': 2,
         'experience': 3,
@@ -114,7 +114,6 @@ export default {
 
 
 <style>
-
 .main-link {
   font-weight: 500;
   margin: 10px;
@@ -144,6 +143,12 @@ export default {
   color: white;
   cursor: pointer;
 }
+
+.current {
+  background: var(--secondary);
+  color: white;
+}
+
 
 #left-burger {
   display: none;

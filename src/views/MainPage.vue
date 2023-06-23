@@ -3,7 +3,7 @@
 
   <div id="HeroPadding" class="hero-padding"/>
   <section id="Hero" class="hero">
-    <div id="SectionHead" class="0" style="overflow: hidden">
+    <div id="SectionBreak" data-section-number="0" style="overflow: hidden">
       <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
@@ -23,7 +23,7 @@
   </section>
 
   <section id="AboutMe" style="scroll-margin-top: 100px;" class="about-me">
-    <h2 id="SectionHead" class="1" style="grid-column: 1">About Me.</h2>
+    <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
       <p>
         I’m Riley, a sophomore computer science student at <span style="color: var(--secondary)">Santa Clara University</span>.
@@ -85,11 +85,14 @@
           </ul>
         </div>
       </div>
+      <div id="SectionBreak" data-section-number="1" style="height: 25px"/>
     </div>
   </section>
+  
+
 
   <section id="Projects" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
-    <h2 id="SectionHead" class="2" style="margin-bottom: 50px">Projects.</h2>
+    <h2 id="SectionBreak" data-section-number="2" style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
                  description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. I primarily worked on the frontend, but I also communicated prompts with the backend team as to parse GPT-4 effectively."
                  type="vid"
@@ -123,11 +126,12 @@
                  type="vid"
                  media="https://www.youtube.com/embed/39aNTYJP-SQ"
                  link="https://github.com/rileywong311/INRIX-Hack-22"
-                 />              
+                 />
+    <div id="SectionBreak" data-section-number="2" style="height: 25px"/>
   </section>
 
   <section id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
-    <h2 id="SectionHead" class="3">Experience.</h2>
+    <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
       <ExperienceCard dates="May 2023-Present" role="Student Developer" org="Google Summer of Code, IfcOpenShell">
@@ -147,11 +151,12 @@
         </p>
       </ExperienceCard>
     </div>
+    <div id="SectionBreak" data-section-number="3" style="height: 25px"/>
   </section>
 
   
   <section id="Contact" class="contact" style="scroll-margin-top: 100px ">
-    <h2 id="SectionHead" class="4" style="grid-column: 1">Contact.</h2>
+    <h2 id="SectionBreak" data-section-number="4" style="grid-column: 1; margin-bottom: auto;">Contact.</h2>
     <div style="grid-column: 2; margin: 50px auto">
       <FormCard  />
       <div style="margin: auto; text-align: center;">
@@ -200,6 +205,11 @@ export default {
   },
   mounted() {
     // intersection observer
+    document.onreadystatechange = function () {
+      if (document.readyState == "complete") {
+
+      }
+    }
     this.navObserver = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         this.intersected = true;
@@ -210,25 +220,19 @@ export default {
     }, {threshold: 0.8});
     this.navObserver.observe(document.getElementById("HeroPadding"));
 
+    let allSections = document.querySelectorAll("#SectionBreak")
     this.sectionObserver = new IntersectionObserver(entries => {
-      let allSections = document.querySelectorAll("#SectionHead");
       allSections.forEach(section => {
         const position = section.getBoundingClientRect();
         if (position.top >= 0 && position.bottom <= window.innerHeight) {
-          allSections.forEach(s => {
-            s.classList.remove('test');
-          })
-          section.classList.add('test');
+          this.currentSection = section.getAttribute("data-section-number")
         }
       })
     }, {threshold: 1});
-    let allSections = document.querySelectorAll("#SectionHead")
+    
     allSections.forEach(section => {
-      section.classList.add('test')
       this.sectionObserver.observe(section);
     })
-    
-    this.currentSection = this.sections.top
 
     this.load();
   },
@@ -260,10 +264,6 @@ export default {
 </script>
 
 <style>
-.test {
-  background: red
-}
-
 .outside-screen {
   transform: translateX(-100%);
 }

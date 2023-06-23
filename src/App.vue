@@ -71,6 +71,9 @@ p {
   transition: 0.5s;
 }
 
+.test {
+  background: red
+}
 
 @media screen and (max-width: 768px) {
   h1 {
