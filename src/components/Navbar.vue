@@ -24,16 +24,16 @@
   </nav>
   <div id="nav-list" :class="{change: showNav }">
     <ul>
-      <li v-show="showNav">
+      <li v-show="showNav" :class="{current: currentSection == sections.about}">
         <span @click="toAboutMe">About Me</span>
       </li>
-      <li v-show="showNav">
+      <li v-show="showNav" :class="{current: currentSection == sections.projects}">
         <span @click="toProjects">Projects</span>
       </li>
-      <li v-show="showNav">
+      <li v-show="showNav" :class="{current: currentSection == sections.experience}">
         <span @click="toExperience">Experience</span>
       </li>
-      <li v-show="showNav">
+      <li v-show="showNav" :class="{current: currentSection == sections.contact}">
         <span @click="toContact">Contact</span>
       </li>
     </ul>
@@ -129,6 +129,7 @@ export default {
   cursor: pointer;
 }
 
+
 .nav-link {
   margin: 10px;
   padding: 4px 25px 4px;
@@ -144,7 +145,7 @@ export default {
   cursor: pointer;
 }
 
-.current {
+.nav-link.current {
   background: var(--secondary);
   color: white;
 }
@@ -201,12 +202,17 @@ export default {
 
 #nav-list li {
   font-size: 2rem;
-  margin: 20px 0 20px;
+  margin: 10px 0 10px;
+  padding: 5px 20px 5px;
   font-weight: 500;
 }
 
+#nav-list li.current {
+  background: var(--background2);
+}
+
 .change#nav-list ul{
-  opacity: 0.96;
+  opacity: 0.98;
   visibility: visible;
 }
 

@@ -18,11 +18,10 @@
     </div>
     <div class="bio-pic-container">
       <img src="@/assets/biopic.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
-      <!-- <button @click="load">Load</button> -->
     </div>
   </section>
 
-  <section id="AboutMe" style="scroll-margin-top: 100px;" class="about-me">
+  <section id="AboutMe" style="scroll-margin-top: 20vh;" class="about-me">
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
       <p>
@@ -36,8 +35,8 @@
       <div style="width: 200px">
         <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
           <div class="resume-link">
-            <div style="margin-top: 5px; margin-left: 35px; font-weight: 400; font-size: 1.75rem">Résumé</div>
-            <div style="margin-left: 32.5px">
+            <div style="margin-top: 5px; margin-left: 37.5px; font-weight: 400; font-size: 1.75rem">Résumé</div>
+            <div style="margin-left: 35px">
               <svg width="50px" height="50px">
                 <line x1="25%" y1="50%" x2="75%" y2="50%" style="stroke: black; stroke-width: 2px"/>
                 <line x1="50%" y1="25%" x2="50%" y2="75%" style="stroke: black; stroke-width: 2px"/>
@@ -91,7 +90,7 @@
   
 
 
-  <section id="Projects" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 30px">
+  <section id="Projects" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 30px">
     <h2 id="SectionBreak" data-section-number="2" style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
                  description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. I primarily worked on the frontend, but I also communicated prompts with the backend team as to parse GPT-4 effectively."
@@ -130,7 +129,7 @@
     <div id="SectionBreak" data-section-number="2" style="height: 25px"/>
   </section>
 
-  <section id="Experience" style="scroll-margin-top: 100px; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
+  <section id="Experience" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
     <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
@@ -203,13 +202,8 @@ export default {
       }
     }
   },
-  mounted() {
+  async mounted() {
     // intersection observer
-    document.onreadystatechange = function () {
-      if (document.readyState == "complete") {
-
-      }
-    }
     this.navObserver = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         this.intersected = true;
@@ -233,11 +227,13 @@ export default {
     allSections.forEach(section => {
       this.sectionObserver.observe(section);
     })
-
+  
     this.load();
+    
   },
   destroyed() {
-    this.observer.disconnect();
+    this.navObserver.disconnect();
+    this.sectionObserver.disconnect();
   },
   methods: {
     async toProjects() {
@@ -249,6 +245,7 @@ export default {
       element.scrollIntoView({behavior: 'smooth'}); 
     },
     async load() {
+      // await document.
       setTimeout( () => {
         this.$refs.heroHeading1.classList.remove('outside-screen');
         this.$refs.heroHeading2.classList.remove('outside-screen');
