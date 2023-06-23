@@ -1,13 +1,15 @@
 <template>
   <Navbar :showShadow="!intersected" :currentSection="currentSection"/>
 
-  <div id="HeroPadding" class="hero-padding"/>
+  <div id="HeroPaddingTop" class="hero-padding"/>
   <section id="Hero" class="hero">
     <div id="SectionBreak" data-section-number="0" style="overflow: hidden">
       <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
-        I value independence, communication, and the opportunity to learn from others! Feel free to <span @click="toProjects" class="hero-to-link">check my work below</span> or <span @click="toContact" class="hero-to-link">reach out to me here!</span>
+        I value independence, strong communication, and the opportunity to learn from others! Feel free to
+        <span @click="toProjects" class="hero-to-link">check my work below</span>
+        or <span @click="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
         Check out my work!
@@ -20,6 +22,7 @@
       <img src="@/assets/biopic.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
     </div>
   </section>
+  <div id="SectionBreak" class="hero-padding"/>
 
   <section id="AboutMe" style="scroll-margin-top: 20vh;" class="about-me">
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
@@ -35,7 +38,7 @@
       <div style="width: 200px">
         <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
           <div class="resume-link">
-            <div style="margin-top: 5px; margin-left: 37.5px; font-weight: 400; font-size: 1.75rem">Résumé</div>
+            <div style="margin-top: 5px; margin-left: 37.5px; font-weight: 400; font-size: 30px">Résumé</div>
             <div style="margin-left: 35px">
               <svg width="50px" height="50px">
                 <line x1="25%" y1="50%" x2="75%" y2="50%" style="stroke: black; stroke-width: 2px"/>
@@ -88,44 +91,86 @@
     </div>
   </section>
   
-
-
   <section id="Projects" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 30px">
     <h2 id="SectionBreak" data-section-number="2" style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
-                 description="An AI-powered cooking assistant designed to simplify and enhance the culinary experience. I primarily worked on the frontend, but I also communicated prompts with the backend team as to parse GPT-4 effectively."
-                 type="vid"
-                 media="https://www.youtube.com/embed/R8uRnmXLSpo"
-                 link="https://github.com/rileywong311/CalHack-AI-2023"
-                 />
+                  type="vid"
+                  media="https://www.youtube.com/embed/R8uRnmXLSpo"
+                  :links="[
+                    {link: 'https://github.com/rileywong311/CalHack-AI-2023', name: 'GitHub'}
+                  ]">
+      <p>
+       An AI-powered cooking assistant designed to simplify and enhance the culinary experience. 
+       I primarily worked on the frontend, but I also communicated prompts with the backend team as we focused on parsing GPT-4 effectively.
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['JavaScript', 'React.js', 'Node.js', 'GPT-4', 'OpenAI API']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
     <hr class="line-break" />
     <ProjectCard name="Blender Addon: Screen to Text"
-                 description="This plugin renders the current viewport with the image as ASCII characters based on brightness values. This utilized the Blender API's off-screen rendering, custom texture drawing, and developer tools for authoring the interface."
                  type="vid"
                  media="https://www.youtube.com/embed/iYzjLTMy2-c"
-                 link="https://github.com/rileywong311/Blender_ScreenToText"
-                 />
+                 :links="[
+                    {link: 'https://github.com/rileywong311/Blender_ScreenToText', name: 'GitHub'}
+                  ]">
+      <p>
+        This plugin renders the current viewport with the image as ASCII characters based on brightness values. 
+        This utilized the Blender API's off-screen rendering, custom texture drawing, and developer tools for authoring the interface.
+        It can be installed right now into recent Blender versions!     
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Python', 'Blender API']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
     <hr class="line-break" />
     <ProjectCard name="Hands For Help"
-                 description="Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.” This was acheived by transfering data user-to-user with QR codes storing JSON. I worked on the backend to locate and parse highest-rated locations."
                  type="vid"
                  media="https://www.youtube.com/embed/LOz8XoQQS2A"
-                 link="https://github.com/rileywong311/H4H-2023"
-                 />
+                 :links="[
+                    {link: 'https://github.com/rileywong311/H4H-2023', name: 'GitHub'}
+                  ]">
+      <p>
+        Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.”
+        This was acheived by transfering data user-to-user with QR codes storing JSON.
+        I worked on the backend to locate and parse highest-rated locations."   
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'HiveDB', 'QR Codes', 'Google Services API']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
     <hr class="line-break" />
     <ProjectCard name="Logistic Map Psuedo-Random Number Generator"
-                 description="Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation. Ran a series of statistical tests on the generator. "
                  type="img"
                  media="LogisticMap.png"
-                 link="https://github.com/rileywong311/Logistic-Map-PRNG"
-                 />   
+                 :links="[
+                    {link: '/documents/LogisticMap.pdf', name: 'Research Paper'},
+                    {link: 'https://github.com/rileywong311/Logistic-Map-PRNG', name: 'GitHub'}
+                  ]">
+      <p>
+        Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation.
+        Ran a series of statistical tests on the generator.
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Python', 'Matplotlib', 'Scipy', 'Computational Physics']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
     <hr class="line-break" />
     <ProjectCard name="NestNotifications"
-                 description="An alternative location tracking app that provides independence among adolescents and more privacy for all users by measuring time and distance rather than providing a direct location. I worked on the backend to record travel-time polygons and location within the zone."
                  type="vid"
                  media="https://www.youtube.com/embed/39aNTYJP-SQ"
-                 link="https://github.com/rileywong311/INRIX-Hack-22"
-                 />
+                 :links="[
+                    {link: 'https://github.com/rileywong311/INRIX-Hack-22', name: 'GitHub'}
+                  ]">
+      <p>
+        An alternative location tracking app that provides independence among adolescents and more privacy for all users
+        by measuring time and distance rather than providing a direct location.
+        I worked on the backend to record travel-time polygons and location within the zone."     
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'SQLite', 'INRIX API', 'Twilio API', 'Google Maps API']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
     <div id="SectionBreak" data-section-number="2" style="height: 25px"/>
   </section>
 
@@ -153,7 +198,6 @@
     <div id="SectionBreak" data-section-number="3" style="height: 25px"/>
   </section>
 
-  
   <section id="Contact" class="contact" style="scroll-margin-top: 100px ">
     <h2 id="SectionBreak" data-section-number="4" style="grid-column: 1; margin-bottom: auto;">Contact.</h2>
     <div style="grid-column: 2; margin: 50px auto">
@@ -166,13 +210,14 @@
   </section>
 
   <Footer />
-
 </template>
+
 
 <script>
 import Navbar from '@/components/Navbar.vue';
 import MediaLogos from '@/components/MediaLogos.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
+import SkillTag from '@/components/SkillTag.vue';
 import ExperienceCard from '@/components/ExperienceCard.vue';
 import FormCard from '@/components/FormCard.vue';
 import Footer from '@/components/Footer.vue';
@@ -183,6 +228,7 @@ export default {
     Navbar,
     MediaLogos,
     ProjectCard,
+    SkillTag,
     ExperienceCard,
     FormCard,
     Footer,
@@ -212,7 +258,7 @@ export default {
         this.intersected = false;
       }
     }, {threshold: 0.8});
-    this.navObserver.observe(document.getElementById("HeroPadding"));
+    this.navObserver.observe(document.getElementById("HeroPaddingTop"));
 
     let allSections = document.querySelectorAll("#SectionBreak")
     this.sectionObserver = new IntersectionObserver(entries => {
@@ -260,6 +306,7 @@ export default {
 }
 </script>
 
+
 <style>
 .outside-screen {
   transform: translateX(-100%);
@@ -277,13 +324,13 @@ export default {
   margin: 0 5% 0;
   display: flex;
   flex-wrap: wrap-reverse;
-  column-gap: 150px;
-  row-gap: 40px;
-  min-height: min(65vh, 800px);
+  column-gap: 300px;
+  row-gap: 50px;
+  min-height: min(35vh, 300px);
 }
 
 .bio-pic {
-  --size: 200px;
+  --size: 300px;
   width: var(--size);
   height: var(--size);
   border: 4px solid var(--secondary);
@@ -296,7 +343,8 @@ export default {
 .hero-to-link {
   font-weight: 300;
   color: var(--secondary);
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid var(--secondary);
   transition: 0.2s;
 }
 
@@ -318,7 +366,7 @@ export default {
   }
 
   .bio-pic {
-    --size: 150px;
+    --size: 175px;
     border: 3px solid var(--secondary) ;
   }
 }

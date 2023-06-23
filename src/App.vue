@@ -25,7 +25,7 @@ html, body {
   margin: 0px;
   font-family: 'Lexend', sans-serif, system-ui;
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   --secondary: #004DA6;
   --background: white;

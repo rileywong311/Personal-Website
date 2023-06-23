@@ -11,6 +11,7 @@
   </div>
 </template>
 
+
 <script>
 export default {
   name: 'ExperienceCard',
@@ -23,7 +24,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

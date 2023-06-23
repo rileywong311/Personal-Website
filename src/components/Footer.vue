@@ -20,6 +20,7 @@ export default {
 }
 </script>
 
+
 <style>
 .footer {
   padding: 50px 5% 5px;
