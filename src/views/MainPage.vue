@@ -203,7 +203,9 @@
     <div style="grid-column: 2; margin: 50px auto">
       <FormCard  />
       <div style="margin: auto; text-align: center;">
-        <a href="mailto:rnwong@scu.edu" style="text-decoration: none"><div style="margin: 50px;"><span class="email">rnwong@scu.edu</span></div></a>
+        <div style="margin: 50px;">
+            <a href="mailto:rnwong@scu.edu" style="text-decoration: none"><span class="email">rnwong@scu.edu</span></a>
+        </div>
         <MediaLogos :center="true" />
       </div>
     </div>
