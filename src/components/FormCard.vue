@@ -1,13 +1,13 @@
 <template>
   <div style="background: var(--background2); border-radius: 50px; padding: 50px min(50px, 5vw) 50px; width: min(500px, 80vw);">
     <form ref="form" style="display: flex; flex-wrap: wrap; gap: 20px"
-          action="https://formsubmit.co/5c607dcce256a2552b8de66e7fc569bb" method="POST">
+          action="https://formsubmit.co/rnwong@scu.edu" method="POST">
     <input type="text" name="_honey" style="display:none">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" :value="this.url + '/received'">
     <input type="hidden" name="_subject" value="New website submission">
       <span>
-        <h4><label for="First">First name:</label></h4>
+        <h4 class="required"><label for="First">First name:</label></h4>
         <input name="name" id="First" type="text" placeholder="Enter your first name" required style="width: min(175px, 55vw)">
       </span>
       <span>
@@ -15,11 +15,11 @@
         <input name="last&nbsp;name" id="Last" type="text" placeholder="Enter your last name" style="width: min(175px, 55vw)">
       </span>
       <span>
-        <h4><label for="Email">Email:</label></h4>
+        <h4 class="required"><label for="Email">Email:</label></h4>
         <input name="email" id="Email" type="email" placeholder="Enter your email" style="width: min(475px, 75vw)">
       </span>
       <span>
-        <h4><label for="Message">Message:</label></h4>
+        <h4 class="required"><label for="Message">Message:</label></h4>
         <textarea name="message" id="Message" placeholder="Ex) You're website is so cool!" required rows="5" cols="999" style="max-width: min(475px, 75vw); max-height: 300px"></textarea>
       </span>
       <input type="submit" class="submit-button shadow" value="Submit">
@@ -74,4 +74,11 @@ textarea {
   transform: scale(1.07);
   cursor: pointer;
 }
+
+.required::after {
+  content: ' *';
+  color: red;
+  vertical-align: text-top;
+}
+
 </style>
