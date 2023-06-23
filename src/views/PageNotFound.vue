@@ -1,13 +1,11 @@
 <template>
   <div style="margin: auto; padding: 200px 5%; text-align: center">
     <h1 style="font-weight: 300">
-      📩
+      <span style="font-weight: 400">404</span>
       <br />
-      Recieved. 
-      <br />
-      <span style="color: var(--secondary); font-weight: 500;">Thank you!</span>
+      Page not found.
     </h1>
-    <router-link to="/"><div style="margin-top: 75px"><span class="return">Go back to main page.</span></div></router-link>
+    <router-link to="/"><div style="margin-top: 75px"><span class="return">Go to main page.</span></div></router-link>
   </div>
 </template>
 
