@@ -1,13 +1,14 @@
 <template>
   <Navbar :showShadow="!intersected" :currentSection="currentSection"/>
 
+  <!-- Hero Screen -->
   <div id="HeroPaddingTop" class="hero-padding"/>
   <section id="Hero" class="hero">
     <div id="SectionBreak" data-section-number="0" style="overflow: hidden">
       <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
-        I value independence, strong communication, and the opportunity to learn from others! Feel free to
+        I value independence, communication, and the opportunity to learn from others! Feel free to
         <span role="tab" tabindex="0" @click="toProjects" @keyup.enter="toProjects" class="hero-to-link">check my work below</span>
         or <span role="tab" tabindex="0" @click="toContact" @keyup.enter="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
@@ -24,6 +25,7 @@
   </section>
   <div id="SectionBreak" class="hero-padding"/>
 
+  <!-- About Me Section -->
   <section id="AboutMe" style="scroll-margin-top: 20vh;" class="about-me">
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
@@ -91,6 +93,7 @@
     </div>
   </section>
   
+  <!-- Projects Section -->
   <section id="Projects" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 30px">
     <h2 id="SectionBreak" data-section-number="2" style="margin-bottom: 50px">Projects.</h2>
     <ProjectCard name="gourm.ai"
@@ -133,7 +136,7 @@
       <p>
         Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.”
         This was acheived by transfering data user-to-user with QR codes storing JSON.
-        I worked on the backend to locate and parse highest-rated locations."   
+        I worked on the backend to locate and parse highest-rated locations.   
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
         <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'HiveDB', 'QR Codes', 'Google Services API']"> {{ skill }} </SkillTag>
@@ -165,7 +168,7 @@
       <p>
         An alternative location tracking app that provides independence among adolescents and more privacy for all users
         by measuring time and distance rather than providing a direct location.
-        I worked on the backend to record travel-time polygons and location within the zone."     
+        I worked on the backend to parse travel-time polygons and record location within the zone.     
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
         <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'SQLite', 'INRIX API', 'Twilio API', 'Google Maps API']"> {{ skill }} </SkillTag>
@@ -174,6 +177,7 @@
     <div id="SectionBreak" data-section-number="2" style="height: 25px"/>
   </section>
 
+  <!-- Experience Section -->
   <section id="Experience" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
     <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
     <br />
@@ -198,6 +202,7 @@
     <div id="SectionBreak" data-section-number="3" style="height: 25px"/>
   </section>
 
+  <!-- Contact Section -->
   <section id="Contact" class="contact" style="scroll-margin-top: 100px ">
     <h2 id="SectionBreak" data-section-number="4" style="grid-column: 1; margin-bottom: auto;">Contact.</h2>
     <div style="grid-column: 2; margin: 50px auto">
@@ -276,6 +281,7 @@ export default {
       this.sectionObserver.observe(section);
     })
   
+    // load in animations
     this.load();
     
   },
@@ -310,6 +316,10 @@ export default {
 
 
 <style>
+/* =====================
+    Load-in animations
+======================== */
+
 .outside-screen {
   transform: translateX(-100%);
 }
@@ -321,6 +331,10 @@ export default {
 .hero-padding {
   height: min(500px, 30vh)
 }
+
+/* =====================
+    Hero landing
+======================== */
 
 .hero {
   margin: 0 5% 0;
@@ -373,6 +387,10 @@ export default {
     border: 3px solid var(--secondary) ;
   }
 }
+
+/* =====================
+    About Me Section
+======================== */
 
 .about-me {
   margin: 50px 0 50px;
@@ -428,11 +446,23 @@ export default {
   }
 }
 
+/* =====================
+    Projects Section
+======================== */
+
 .line-break {
   width: 55%;
   margin: 75px auto 100px;
   border: 1px solid black;
 }
+
+/* =====================
+    Experience Section
+======================== */
+
+/* =====================
+    Contact Section
+======================== */
 
 .contact {
   margin: 50px 0 50px;
