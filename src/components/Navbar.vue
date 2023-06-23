@@ -1,8 +1,8 @@
 <template>
   <nav :class="{shadow: showShadow}" style="position: fixed; top: 0; left 0; width: min(100%, 1800px); background: var(--background); z-index: 2">
 
-    <span @click="toHero" id="right" style="margin-top: min(30px, 3vh); display: block; float: left; margin-left: 5%">
-      <span class="main-link">RW.</span>
+    <span @click="toHero" @keyup.enter="toHero" id="right" style="margin-top: min(30px, 3vh); display: block; float: left; margin-left: 5%">
+      <span role="tab" tabindex="0" class="main-link">RW.</span>
       <br />
       <svg height="7.5px" width="120px">
         <line x1="0%" y1="50%" x2="100%" y2="50%" style="stroke: black"></line>
@@ -10,10 +10,10 @@
     </span>
 
     <span id="left-bar" style="margin-top: min(30px, 3vh); display: block; float: right; margin-right: 5%">
-      <span class="nav-link" :class="{current: currentSection == sections.about}" @click="toAboutMe">About Me</span>
-      <span class="nav-link" :class="{current: currentSection == sections.projects}" @click="toProjects">Projects</span>
-      <span class="nav-link" :class="{current: currentSection == sections.experience}" @click="toExperience">Experience</span>
-      <span class="nav-link" :class="{current: currentSection == sections.contact}" @click="toContact">Contact</span>
+      <span role="tab" tabindex="0" class="nav-link" :class="{current: currentSection == sections.about}" @click="toAboutMe" @keyup.enter="toAboutMe">About Me</span>
+      <span role="tab" tabindex="0" class="nav-link" :class="{current: currentSection == sections.projects}" @click="toProjects" @keyup.enter="toProjects">Projects</span>
+      <span role="tab" tabindex="0" class="nav-link" :class="{current: currentSection == sections.experience}" @click="toExperience" @keyup.enter="toExperience">Experience</span>
+      <span role="tab" tabindex="0" class="nav-link" :class="{current: currentSection == sections.contact}" @click="toContact" @keyup.enter="toContact">Contact</span>
     </span>
 
     <span @click="toggleHamburger" id="left-burger" style="margin-top: min(25px, 1.5vh); position: fixed; right: 5%; padding: 8px; border: 2px solid black; border-radius: 10px">
@@ -123,7 +123,8 @@ export default {
   transition: 0.3s ease-in-out;
 }
 
-.main-link:hover {
+.main-link:hover,
+.main-link:focus {
   /* border-color: black; */
   /* background: var(--accent); */
   box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
@@ -140,7 +141,8 @@ export default {
   transition: 0.3s;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
   background: var(--secondary);
   color: white;
   cursor: pointer;

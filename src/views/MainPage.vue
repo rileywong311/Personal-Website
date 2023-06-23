@@ -8,8 +8,8 @@
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
         I value independence, strong communication, and the opportunity to learn from others! Feel free to
-        <span @click="toProjects" class="hero-to-link">check my work below</span>
-        or <span @click="toContact" class="hero-to-link">reach out to me here!</span>
+        <span role="tab" tabindex="0" @click="toProjects" @keyup.enter="toProjects" class="hero-to-link">check my work below</span>
+        or <span role="tab" tabindex="0" @click="toContact" @keyup.enter="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
         Check out my work!
@@ -178,13 +178,13 @@
     <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
-      <ExperienceCard dates="May 2023-Present" role="Student Developer" org="Google Summer of Code, IfcOpenShell">
+      <ExperienceCard dates="May 2023-Present" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
         <p>
           The project I am working on involves updating and reworking the smart building entity authoring tool in IfcOpenShell's Blender plugin, <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
           Here, I am working to further bridge the IFC and <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures and their shared mission to evolve the common exchange of building information.
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="April 2023-Present" role="Webmaster" org="SCU Association of Computational Machinery">
+      <ExperienceCard dates="April 2023-Present" position="Webmaster" org="SCU Association of Computational Machinery">
         <p>
           ACM is one of the largest student organizations on campus and is the primary computer science club that hosts workshops, guest speakers, and hackathons. 
           I work to mantain, update, and expand ACM's sites and content database.
@@ -348,7 +348,8 @@ export default {
   transition: 0.2s;
 }
 
-.hero-to-link:hover {
+.hero-to-link:hover,
+.hero-to-link:focus {
   cursor: pointer;
   background: var(--background2);
 }

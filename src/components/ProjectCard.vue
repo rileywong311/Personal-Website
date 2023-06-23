@@ -8,7 +8,7 @@
       <iframe v-if="media && type === 'vid'" class="media shadow" allow="fullscreen;" :src="media" alt="video"/>
       <img v-else-if="media && type === 'img'" class="media shadow" :src="require(`../assets/${media}`)" alt="picture"/>
       <div v-else style="width: min(480px, 90vw); height: calc(min(480px, 90vw) / 1.77); background: black" />
-      <div style="text-align: right; margin: 25px 0">
+      <div style="margin: 25px 0; display: flex; flex-wrap: wrap; justify-content: right; row-gap: 25px">
         <span v-for="link in links">
         <a :href="link.link" target="_blank" style="text-decoration: none; color: black">
             <span style="border: 2px solid black; border-radius: 999px; padding: 5px 25px 5px; margin-right: 15px; background: var(--a-background); color: var(--a-color)">

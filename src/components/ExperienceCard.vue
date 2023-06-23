@@ -4,7 +4,7 @@
       <p style="margin: 0">{{ dates }}</p>
     </div>
     <div>
-      <h3 style="margin: 5px 0">{{ role }}</h3>
+      <h3 style="margin: 5px 0">{{ position }}</h3>
       <h4>{{ org }}</h4>
       <slot />
     </div>
@@ -17,7 +17,7 @@ export default {
   name: 'ExperienceCard',
   props:  {
     dates: String,
-    role: String,
+    position: String,
     org: String,
     description: String,
     link: String,
