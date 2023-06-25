@@ -8,8 +8,8 @@
       <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
       <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
-        I value independence, communication, and the opportunity to learn from others! Feel free to
-        <span role="tab" tabindex="0" @click="toProjects" @keyup.enter="toProjects" class="hero-to-link">check my work below</span>
+        I'm committed to fostering independence, communication, and the opportunity to learn from others! Feel free to
+        <span role="tab" tabindex="0" @click="toProjects" @keyup.enter="toProjects" class="hero-to-link">explore my work below</span>
         or <span role="tab" tabindex="0" @click="toContact" @keyup.enter="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
       <!-- <span style="border: 2px solid black; border-radius: 999px; margin: 5px; padding: 8px 25px 8px; font-weight: 400">
@@ -30,12 +30,17 @@
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
       <p>
-        I’m Riley, a sophomore computer science student at <span style="color: var(--secondary)">Santa Clara University</span>.
+        I’m Riley, a dedicated and driven sophomore computer science student at
+        <span style="color: var(--secondary)">Santa Clara University</span>.
+        I aim to expand my expertise as a training software engineer in the ever-evolving field of technology.
+        Eager to contribute my skills and enthusiasm, I am confident in my abiity to thrive in a collaborative environment.
+      </p>
+      <p>
         My passion for programming began in middle school when I first discovered MIT Scratch.
-        At the time, I didn't even know what a function was, but I somehow made my 1000 lines of repeated code work...
-        Today, I enjoy learning new technologies from REST API's to circuits! 
-        In my free time, I’ll be found playing tennis, rendering a new 3D project in Blender, 
-        or practicing a finger-style song on the acoustic guitar. 
+        At the time, I didn't even know what a function was, but I tenaciously made my 1000 lines of repeated code work...
+        Today, I thrive on continually expanding my knowledge as I learn new technologies from REST API's to circuits! 
+        In my spare time, I’ll be found playing tennis, rendering a new 3D project using Blender, 
+        or practicing finger-style on the acoustic guitar. 
       </p>
       <div style="width: 200px">
         <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
@@ -103,8 +108,9 @@
                     {link: 'https://github.com/rileywong311/CalHack-AI-2023', name: 'GitHub'}
                   ]">
       <p>
-       An AI-powered cooking assistant designed to simplify and enhance the culinary experience. 
-       I primarily worked on the frontend, but I also communicated prompts with the backend team as we focused on parsing GPT-4 effectively.
+       An AI-powered cooking assistant designed to provide users with an intuitive, seamless, and delightful culinary experience. 
+       I primarily worked on the frontend, ensuring a user-friendly interface that guides the cooking process,
+       but I also collaborated closely with the backend team to optimize prompts as we focused on parsing GPT-4 effectively.
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
         <SkillTag v-for="skill in ['JavaScript', 'React.js', 'Node.js', 'GPT-4', 'OpenAI API']"> {{ skill }} </SkillTag>
@@ -151,8 +157,9 @@
                     {link: 'https://github.com/rileywong311/Logistic-Map-PRNG', name: 'GitHub'}
                   ]">
       <p>
-        Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation.
-        Ran a series of statistical tests on the generator.
+        Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation;
+        this tapped into the logistic map's inherent unpredictability.
+        Afterward, I ran a series of statistical tests to evaluate that the generator met the criteria for randomness.
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
         <SkillTag v-for="skill in ['Python', 'Matplotlib', 'Scipy', 'Computational Physics']"> {{ skill }} </SkillTag>
@@ -166,8 +173,9 @@
                     {link: 'https://github.com/rileywong311/INRIX-Hack-22', name: 'GitHub'}
                   ]">
       <p>
-        An alternative location tracking app that provides independence among adolescents and more privacy for all users
-        by measuring time and distance rather than providing a direct location.
+        An alternative location tracking app that prioritizes independence among users
+        by measuring time and distance rather than providing a direct location,
+        fostering a balance between convenience and privacy.
         I worked on the backend to parse travel-time polygons and record location within the zone.     
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
@@ -184,15 +192,22 @@
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
       <ExperienceCard dates="May 2023-Present" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
         <p>
-          The project I am working on involves updating and reworking the smart building entity authoring tool in IfcOpenShell's Blender plugin, <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
-          Here, I am working to further bridge the IFC and <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures and their shared mission to evolve the common exchange of building information.
+          The project I am working on focuses on enhancing and revamping the smart building entity authoring tool in IfcOpenShell's Blender plugin, 
+          <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
+          Here, I am working to further bridge the IFC (Industry Foundation Classes) and
+          <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures,
+          with the shared goal of advancing the standard exchange of building information.
+          By combining these two frameworks, am helping to establish a foundation for more enriched building management,
+          with far-reaching implications for the industry as a whole.
         </p>
       </ExperienceCard>
       <ExperienceCard dates="April 2023-Present" position="Webmaster" org="SCU Association of Computational Machinery">
         <p>
-          ACM is one of the largest student organizations on campus and is the primary computer science club that hosts workshops, guest speakers, and hackathons. 
-          I work to mantain, update, and expand ACM's sites and content database.
-          Check out the ACM sites
+          ACM is one of the largest student organizations on campus and the leading computer science club 
+          for organizing workshops, inviting guest speakers, and hosting hackathons. 
+          I work to mantain, update, and expand ACM's sites and content management system.
+          I ensure that ACM's online presence remains seamless, up-to-date, and user-friendly.
+          Access the ACM sites
           <a href="http://acm.engr.scu.edu/#/" target="_blank" style="color: var(--secondary)">here</a>,
           <a href="https://hackforhumanity.io/" target="_blank" style="color: var(--secondary)">here</a>,
           and <a href="http://acm.engr.scu.edu/inrix/" target="_blank" style="color: var(--secondary)">here!</a>
