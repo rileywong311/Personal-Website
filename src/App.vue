@@ -42,6 +42,7 @@ h1 {
   font-size: 4rem;
   font-weight: 700;
   margin: 0;
+  line-height: 1.15;
 }
 
 h2 {
@@ -63,7 +64,7 @@ h4 {
 
 
 p {
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .shadow {

@@ -1,11 +1,11 @@
 <template>
-  <div class="footer">
+  <section class="footer">
     <div style="width: 12.5rem; margin: auto">
       <hr />
     </div>
     <span style="margin: 30px auto; text-align: center">Made with <span style="color: #41B883">Vue.js</span> and <span style="color: #5e88ea">CSS</span> from the ground up!</span>
     <span @click="toHero" class="copyright">2023 by Riley Wong</span>
-  </div>
+  </section>
 </template>
 
 <script>

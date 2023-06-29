@@ -1,7 +1,7 @@
 <template>
   <div style="background: var(--background2); border-radius: 50px; padding: 50px min(50px, 5vw) 50px; width: min(500px, 80vw);">
     <form ref="form" style="display: flex; flex-wrap: wrap; gap: 20px"
-          action="https://formsubmit.co/rnwong@scu.edu" method="POST">
+          action="https://formsubmit.co/5c607dcce256a2552b8de66e7fc569bb" method="POST">
     <input type="text" name="_honey" style="display:none">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" :value="this.url + '/received'">

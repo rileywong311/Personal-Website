@@ -32,13 +32,13 @@
       <p>
         I’m Riley, a dedicated and driven sophomore computer science student at
         <span style="color: var(--secondary)">Santa Clara University</span>.
-        I aim to expand my expertise as a training software engineer in the ever-evolving field of technology.
-        Eager to contribute my skills and enthusiasm, I am confident in my abiity to thrive in a collaborative environment.
+        Confident in my abiity to thrive in a collaborative environment and eager to contribute my skills,
+        I aim to expand my expertise as a software engineer.
       </p>
       <p>
         My passion for programming began in middle school when I first discovered MIT Scratch.
-        At the time, I didn't even know what a function was, but I tenaciously made my 1000 lines of repeated code work...
-        Today, I thrive on continually expanding my knowledge as I learn new technologies from REST API's to circuits! 
+        At the time, I didn't even know what a function was, but I resolutely made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
+        Today, I thrive on continually progressing my knowledge as I learn new technologies from REST API's to circuits! 
         In my spare time, I’ll be found playing tennis, rendering a new 3D project using Blender, 
         or practicing finger-style on the acoustic guitar. 
       </p>
@@ -190,18 +190,18 @@
     <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
-      <ExperienceCard dates="May 2023-Present" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
+      <ExperienceCard dates="May 2023 - Present" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
         <p>
           The project I am working on focuses on enhancing and revamping the smart building entity authoring tool in IfcOpenShell's Blender plugin, 
           <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
           Here, I am working to further bridge the IFC (Industry Foundation Classes) and
           <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures,
           with the shared goal of advancing the standard exchange of building information.
-          By combining these two frameworks, am helping to establish a foundation for more enriched building management,
+          By combining these two frameworks, this project helps to establish a foundation for more enriched building management systems,
           with far-reaching implications for the industry as a whole.
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="April 2023-Present" position="Webmaster" org="SCU Association of Computational Machinery">
+      <ExperienceCard dates="April 2023 - Present" position="Webmaster" org="SCU Association of Computational Machinery">
         <p>
           ACM is one of the largest student organizations on campus and the leading computer science club 
           for organizing workshops, inviting guest speakers, and hosting hackathons. 
