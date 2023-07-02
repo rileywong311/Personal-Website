@@ -66,30 +66,30 @@
         <div>
           <h4 style="margin: 25px 0 10px">Languages:</h4>
           <ul style="list-style-type: circle">
-            <li>Python</li>
-            <li>C++</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
-            <li>SQL</li>
+            <li><i class="devicon-python-plain"/> Python</li>
+            <li><i class="devicon-cplusplus-plain"/> C++</li>
+            <li><i class="devicon-javascript-plain"/> JavaScript</li>
+            <li><i class="devicon-html5-plain"/> HTML</li>
+            <li><i class="devicon-css3-plain"/> CSS</li>
           </ul>
         </div>
         <div>
           <h4 style="margin: 25px 0 10px">Frameworks:</h4>
           <ul style="list-style-type: circle">
-            <li>Flask</li>
-            <li>Vue.js</li>
-            <li>React.js</li>
-            <li>Matplotlib</li>
-            <li>Scipy</li>
+            <li><i class="devicon-flask-original"/> Flask</li>
+            <li><i class="devicon-vuejs-plain"/> Vue.js</li>
+            <li><i class="devicon-react-original"/> React.js</li>
           </ul>
         </div>
         <div>
           <h4 style="margin: 25px 0 10px">Tools:</h4>
           <ul style="list-style-type: circle">
-            <li>VS Code</li>
-            <li>GitHub</li>
-            <li>Jupyter</li>
-            <li>Blender API</li>
+            <li><i class="devicon-vscode-plain"/> VS Code</li>
+            <li><i class="devicon-github-original"/> GitHub</li>
+            <li><i class="devicon-jupyter-plain"/> Jupyter</li>
+            <li><i class="devicon-blender-original"/> Blender API</li>
+            <li><i class="devicon-figma-plain"/> Figma</li>
+            <li><i class="devicon-qt-original"/> Qt</li>
             <li>Stack Overflow</li>
           </ul>
         </div>
@@ -179,7 +179,7 @@
         I worked on the backend to parse travel-time polygons and record location within the zone.     
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
-        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'SQLite', 'INRIX API', 'Twilio API', 'Google Maps API']"> {{ skill }} </SkillTag>
+        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'SQLite', 'INRIX API', 'Twilio API', 'Google Places API']"> {{ skill }} </SkillTag>
       </div>
     </ProjectCard>
     <div id="SectionBreak" data-section-number="2" style="height: 25px"/>
