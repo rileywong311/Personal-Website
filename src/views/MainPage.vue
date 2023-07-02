@@ -65,7 +65,7 @@
       <div class="skills">
         <div>
           <h4 style="margin: 25px 0 10px">Languages:</h4>
-          <ul style="list-style-type: circle">
+          <ul style="list-style-type: none; padding-left: 15px">
             <li><i class="devicon-python-plain"/> Python</li>
             <li><i class="devicon-cplusplus-plain"/> C++</li>
             <li><i class="devicon-javascript-plain"/> JavaScript</li>
@@ -75,7 +75,7 @@
         </div>
         <div>
           <h4 style="margin: 25px 0 10px">Frameworks:</h4>
-          <ul style="list-style-type: circle">
+          <ul style="list-style-type: none; padding-left: 15px">
             <li><i class="devicon-flask-original"/> Flask</li>
             <li><i class="devicon-vuejs-plain"/> Vue.js</li>
             <li><i class="devicon-react-original"/> React.js</li>
@@ -83,7 +83,7 @@
         </div>
         <div>
           <h4 style="margin: 25px 0 10px">Tools:</h4>
-          <ul style="list-style-type: circle">
+          <ul style="list-style-type: none; padding-left: 15px">
             <li><i class="devicon-vscode-plain"/> VS Code</li>
             <li><i class="devicon-github-original"/> GitHub</li>
             <li><i class="devicon-jupyter-plain"/> Jupyter</li>
@@ -335,6 +335,7 @@ export default {
     Load-in animations
 ======================== */
 
+
 .outside-screen {
   transform: translateX(-100%);
 }
@@ -441,7 +442,7 @@ export default {
 
 .skills {
   display: flex;
-  column-gap: 175px;
+  column-gap: 200px;
   flex-wrap: wrap;
 }
 
@@ -453,7 +454,7 @@ export default {
 
 @media screen and (max-width: 450px) {
   .skills {
-    column-gap: 35px;
+    column-gap: 50px;
   }
 
   .skills li {
