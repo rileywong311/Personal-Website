@@ -32,7 +32,7 @@
       <p>
         I’m Riley, a dedicated and driven sophomore computer science student at
         <span style="color: var(--secondary)">Santa Clara University</span>.
-        Confident in my abiity to thrive in a collaborative environment and eager to contribute my skills,
+        Confident in my ability to thrive in a collaborative environment and eager to contribute my skills,
         I aim to expand my expertise as a software engineer.
       </p>
       <p>
