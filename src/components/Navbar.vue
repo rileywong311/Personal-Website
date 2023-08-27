@@ -5,7 +5,7 @@
       <span role="tab" tabindex="0" class="main-link">RW.</span>
       <br />
       <svg height="7.5px" width="120px">
-        <line x1="0%" y1="50%" x2="100%" y2="50%" style="stroke: black"></line>
+        <line x1="0%" y1="50%" x2="100%" y2="50%" style="stroke: white"></line>
       </svg>
     </span>
 
@@ -133,24 +133,16 @@ export default {
 
 
 .nav-link {
-  margin: 10px;
-  padding: 4px 25px 4px;
-  border: 2px solid black;
-  border-radius: 999px;
-  font-weight: 400;
+  margin-left: 50px;
+  font-weight: 500;
   transition: 0.3s;
 }
 
 .nav-link:hover,
-.nav-link:focus {
-  background: var(--secondary);
-  color: white;
-  cursor: pointer;
-}
-
 .nav-link.current {
-  background: var(--secondary);
-  color: white;
+  color: var(--secondary);
+  cursor: pointer;
+  text-decoration-line: underline
 }
 
 
