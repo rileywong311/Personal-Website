@@ -190,17 +190,6 @@
     <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
     <br />
     <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
-      <ExperienceCard dates="May 2023 - Present" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
-        <p>
-          The project I am working on focuses on enhancing and revamping the smart building entity authoring tool in IfcOpenShell's Blender plugin, 
-          <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
-          Here, I am working to further bridge the IFC (Industry Foundation Classes) and
-          <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures,
-          with the shared goal of advancing the standard exchange of building information.
-          By combining these two frameworks, this project helps to establish a foundation for more enriched building management systems,
-          with far-reaching implications for the industry as a whole.
-        </p>
-      </ExperienceCard>
       <ExperienceCard dates="April 2023 - Present" position="Webmaster" org="SCU Association of Computational Machinery">
         <p>
           ACM is one of the largest student organizations on campus and the leading computer science club 
@@ -211,6 +200,17 @@
           <a href="http://acm.engr.scu.edu/#/" target="_blank" style="color: var(--secondary)">here</a>,
           <a href="https://hackforhumanity.io/" target="_blank" style="color: var(--secondary)">here</a>,
           and <a href="http://acm.engr.scu.edu/inrix/" target="_blank" style="color: var(--secondary)">here!</a>
+        </p>
+      </ExperienceCard>
+      <ExperienceCard dates="May 2023 - August 2023" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
+        <p>
+          The project I worked on focused on enhancing the smart building equipment tool in IfcOpenShell's Blender plugin, 
+          <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
+          Here, I worked to combine the IFC (Industry Foundation Classes) and
+          <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures,
+          with the shared goal of advancing the standard exchange of building information and establishing more enriched building 
+          management systems. My final report is published
+          <a href="https://gist.github.com/rileywong311/c5dd453740ac7e80107398032698b081"  target="_blank" style="color: var(--secondary)">here</a>.
         </p>
       </ExperienceCard>
     </div>
