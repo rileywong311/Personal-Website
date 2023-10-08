@@ -6,7 +6,7 @@
     <a href="https://github.com/rileywong311" target="_blank">
       <img src="@/assets/logos/GitHub.svg" alt="GitHub link" />
     </a>
-    <a href="https://www.youtube.com/@rileywong8319" target="_blank">
+    <a href="https://www.youtube.com/@rileywong510" target="_blank">
       <img src="@/assets/logos/YouTube.svg" alt="YouTube link" />
     </a>
   </div>
