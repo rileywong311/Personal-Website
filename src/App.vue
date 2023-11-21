@@ -39,14 +39,14 @@ html, body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.15;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 500;
   margin: 5px 0 5px;
 }

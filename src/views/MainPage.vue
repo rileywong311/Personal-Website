@@ -356,20 +356,20 @@ export default {
   margin: 0 5% 0;
   display: flex;
   flex-wrap: wrap-reverse;
-  column-gap: 300px;
-  row-gap: 50px;
+  column-gap: 225px;
+  row-gap: 20px;
   min-height: min(35vh, 300px);
 }
 
 .bio-pic {
-  --size: 300px;
+  --size: 400px;
   width: var(--size);
   height: var(--size);
   border: 4px solid var(--secondary);
   border-radius: 999px;
   object-fit: cover;
   z-index: -1;
-  box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
+  /* box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px; */
 }
 
 .hero-to-link {
@@ -399,7 +399,7 @@ export default {
   }
 
   .bio-pic {
-    --size: 175px;
+    --size: 200px;
     border: 3px solid var(--secondary) ;
   }
 }
