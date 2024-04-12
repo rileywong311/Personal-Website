@@ -71,6 +71,7 @@
             <li><i class="devicon-javascript-plain"/> JavaScript</li>
             <li><i class="devicon-html5-plain"/> HTML</li>
             <li><i class="devicon-css3-plain"/> CSS</li>
+            <li><i class="devicon-dart-plain"/> Dart</li>
           </ul>
         </div>
         <div>
@@ -79,6 +80,7 @@
             <li><i class="devicon-flask-original"/> Flask</li>
             <li><i class="devicon-vuejs-plain"/> Vue.js</li>
             <li><i class="devicon-react-original"/> React.js</li>
+            <li><i class="devicon-flutter-plain"/>Flutter</li>
           </ul>
         </div>
         <div>
@@ -90,7 +92,7 @@
             <li><i class="devicon-blender-original"/> Blender API</li>
             <li><i class="devicon-figma-plain"/> Figma</li>
             <li><i class="devicon-qt-original"/> Qt</li>
-            <li>Stack Overflow</li>
+            <li>(Stack Overflow)</li>
           </ul>
         </div>
       </div>
