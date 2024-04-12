@@ -60,8 +60,8 @@
 
       <div style="display: flex">
         <h4>Skills</h4>
-        <svg width="100%" height="25px">
-          <line x1="min(15px, 5%)" y1="50%" x2="95%" y2="50%" style="stroke: black" />
+        <svg width="100%" height="25px" style="margin-left: 15px">
+          <line x1="0%" y1="50%" x2="95%" y2="50%" style="stroke: black" />
         </svg>
       </div>
       <div class="skills">

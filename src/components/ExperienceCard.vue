@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div style="margin: 15px 0 45px">
     <span style="display: grid; grid-template-columns: auto 1fr">
-      <p style="grid-column: 1">{{ dates }}</p>
-      <svg style="grid-column: 2; width: 100%; height: 60px">
-        <line x1="min(15px, 5%)" y1="50%" x2="100%" y2="50%" style="stroke: black"/>
+      <span style="grid-column: 1">{{ dates }}</span>
+      <svg style="grid-column: 2; margin-left: 15px; width: 100%; height: 22.5px">
+        <line x1="0%" y1="50%" x2="90%" y2="50%" style="stroke: black"/>
       </svg>
     </span>
     <div class="experience-info">
