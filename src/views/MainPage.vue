@@ -61,7 +61,7 @@
       <div style="display: flex">
         <h4>Skills</h4>
         <svg width="100%" height="25px">
-          <line x1="5%" y1="50%" x2="95%" y2="50%" style="stroke: black" />
+          <line x1="min(15px, 5%)" y1="50%" x2="95%" y2="50%" style="stroke: black" />
         </svg>
       </div>
       <div class="skills">
@@ -203,31 +203,44 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="Experience" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 50px; background: var(--background2)">
-    <h2 id="SectionBreak" data-section-number="3">Experience.</h2>
-    <br />
-    <div style="display: flex; flex-wrap: wrap; column-gap: 50px; row-gap: 25px">
-      <ExperienceCard dates="April 2023 - Present" position="Webmaster" org="SCU Association of Computational Machinery">
+  <section id="Experience" style="scroll-margin-top: 15vh" class="experience">
+    <h2 id="SectionBreak" data-section-number="3" style="grid-column: 1; margin-bottom: auto">Experience.</h2>
+    <div style="grid-column: 2">
+      <ExperienceCard dates="Incoming" position="Software Engineer Intern" org="Juniper Networks">
+        <p>
+          Incoming intern for this summer.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard dates="April 2023 - Present" position="Student Webmaster" org="SCU Association of Computational Machinery">
         <p>
           ACM is one of the largest student organizations on campus and the leading computer science club 
           for organizing workshops, inviting guest speakers, and hosting hackathons. 
           I work to mantain, update, and expand ACM's sites and content management system.
           I ensure that ACM's online presence remains seamless, up-to-date, and user-friendly.
           Access the ACM sites
-          <a href="http://acm.engr.scu.edu/#/" target="_blank" style="color: var(--secondary)">here</a>,
+          <a href="https://scuacm.com" target="_blank" style="color: var(--secondary)">here</a>,
           <a href="https://hackforhumanity.io/" target="_blank" style="color: var(--secondary)">here</a>,
-          and <a href="http://acm.engr.scu.edu/inrix/" target="_blank" style="color: var(--secondary)">here!</a>
+          and <a href="https://roblox.scuacm.com/" target="_blank" style="color: var(--secondary)">here!</a>
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="May 2023 - August 2023" position="Student Developer" org="Google Summer of Code, IfcOpenShell">
+      <ExperienceCard dates="May 2023 - August 2023" position="Software Developer Intern" org="Google Summer of Code, IfcOpenShell">
         <p>
-          The project I worked on focused on enhancing the smart building equipment tool in IfcOpenShell's Blender plugin, 
+          The project I worked on focused on enhancing the smart building development tool in IfcOpenShell's Blender plugin, 
           <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
-          Here, I worked to combine the IFC (Industry Foundation Classes) and
+          Here, I worked to combine the
+          <a href="https://technical.buildingsmart.org/standards/ifc/" target="_blank">IFC</a> (Industry Foundation Classes) and
           <a href="https://brickschema.org/" target="_blank" style="color: var(--secondary)">BrickSchema</a> semantic structures,
           with the shared goal of advancing the standard exchange of building information and establishing more enriched building 
           management systems. My final report is published
           <a href="https://gist.github.com/rileywong311/c5dd453740ac7e80107398032698b081"  target="_blank" style="color: var(--secondary)">here</a>.
+        </p>
+      </ExperienceCard>
+      <ExperienceCard dates="June 2022 - August 2022" position="Student Visitor" org="University California, Berkeley">
+        <p>
+          As a visiting student for the summer, I took the famous “The Structure and Interpretation of Computer Programs”
+          (<a href="https://cs61a.org/" target="_blank">COMPSCI 61A</a>) as well as
+          “Introduction to Computational Techniques in Physics” (<a href="https://classes.berkeley.edu/content/physics-77" target="_blank">PHYSICS 77</a>).
+          These classes solidified my domain knowledge on the application of programming across diverse fields and paradigms.
         </p>
       </ExperienceCard>
     </div>
@@ -434,7 +447,7 @@ export default {
   gap: min(400px, 20vw);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .about-me {
     display: block;
   }
@@ -492,6 +505,21 @@ export default {
 /* =====================
     Experience Section
 ======================== */
+
+.experience {
+  margin: 50px 0 50px;
+  padding: 30px 5% 30px;
+  background: var(--background2);
+  display: grid;
+  grid-auto-rows: auto;
+  column-gap: min(400px, 20vw);
+}
+
+@media screen and (max-width: 1200px) {
+  .experience {
+    display: block;
+  }
+}
 
 /* =====================
     Contact Section

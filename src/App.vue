@@ -47,18 +47,18 @@ h1 {
 
 h2 {
   font-size: 3.5rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 5px 0 5px;
 }
 
 h3 {
   font-size: 1.75rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h4 {
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 
