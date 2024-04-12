@@ -101,6 +101,52 @@
   <!-- Projects Section -->
   <section id="Projects" style="scroll-margin-top: 15vh; margin: 50px 0 50px; padding: 30px 5% 30px">
     <h2 id="SectionBreak" data-section-number="2" style="margin-bottom: 50px">Projects.</h2>
+    <ProjectCard name="Brickdle.com"
+                  type="vid"
+                  media="https://www.youtube.com/embed/2WSh96YcIwc"
+                  :links="[
+                    {link: 'https://www.brickdle.com/', name: 'Play here!'}
+                  ]">
+      <p>
+        Parsed catalog of LEGO sets to create a Wordle-like game where users guess number of LEGO’s in the picture.
+        We are releasing global daily puzzles!
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Flutter', 'Python', 'SQL', 'Google Analytics', 'BigQuery']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
+    <hr class="line-break" />
+    <ProjectCard name="Park, Bus, & Jam"
+                  type="vid"
+                  media="https://www.youtube.com/embed/GFKy2b_VfmI"
+                  :links="[
+                    {link: 'https://github.com/rileywong311/Park-Bus-and-Jam', name: 'GitHub'}
+                  ]">
+      <p>
+        Traffic congestion and other stresses of transportation can quickly take away from a once-in-a-lifetime concert experience.
+        This app takes care of all the stress, providing precise routing, cheap/available parking spaces, and an optimized last leg of public transport to your venue.
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'INRIX API', 'Ticket Master API', 'Google Services API']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
+    <hr class="line-break" />
+    <ProjectCard name="BlenderBIM BrickSchema Module"
+                  type="vid"
+                  media="https://www.youtube.com/embed/8bbuyzT5-rc"
+                  :links="[
+                    {link: 'https://osarch.org/2023/07/29/what-is-brickschema-and-how-can-i-use-it-update-blenderbim-add-ons-brick-module/', name: 'Blog Post'},
+                    {link: 'https://gist.github.com/rileywong311/c5dd453740ac7e80107398032698b081', name: 'Final Report'}
+                  ]">
+      <p>
+        This project further bridges the IfcOpenShell and BrickSchema open-source communities and shared mission to evolve the common exchange of building information.
+        This project allows facility management operators to seamlessly edit equipment data and relationships as they continue monitoring the building.
+      </p>
+      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
+        <SkillTag v-for="skill in ['Python', 'SPARQL', 'Blender API', 'Plugin', 'Python Unit Tests', 'Feature Tests', 'Smart Buildings', 'Building Information Models', 'IFC', 'BrickSchema']"> {{ skill }} </SkillTag>
+      </div>
+    </ProjectCard>
+    <hr class="line-break" />
     <ProjectCard name="gourm.ai"
                   type="vid"
                   media="https://www.youtube.com/embed/R8uRnmXLSpo"
@@ -133,22 +179,6 @@
       </div>
     </ProjectCard>
     <hr class="line-break" />
-    <ProjectCard name="Hands For Help"
-                 type="vid"
-                 media="https://www.youtube.com/embed/LOz8XoQQS2A"
-                 :links="[
-                    {link: 'https://github.com/rileywong311/H4H-2023', name: 'GitHub'}
-                  ]">
-      <p>
-        Supported an internet-independent mode of resource tracking and sharing through “digital handshakes.”
-        This was acheived by transfering data user-to-user with QR codes storing JSON.
-        I worked on the backend to locate and parse highest-rated locations.   
-      </p>
-      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
-        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'HiveDB', 'QR Codes', 'Google Services API']"> {{ skill }} </SkillTag>
-      </div>
-    </ProjectCard>
-    <hr class="line-break" />
     <ProjectCard name="Logistic Map Psuedo-Random Number Generator"
                  type="img"
                  media="LogisticMap.png"
@@ -163,23 +193,6 @@
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
         <SkillTag v-for="skill in ['Python', 'Matplotlib', 'Scipy', 'Computational Physics']"> {{ skill }} </SkillTag>
-      </div>
-    </ProjectCard>
-    <hr class="line-break" />
-    <ProjectCard name="NestNotifications"
-                 type="vid"
-                 media="https://www.youtube.com/embed/39aNTYJP-SQ"
-                 :links="[
-                    {link: 'https://github.com/rileywong311/INRIX-Hack-22', name: 'GitHub'}
-                  ]">
-      <p>
-        An alternative location tracking app that prioritizes independence among users
-        by measuring time and distance rather than providing a direct location,
-        fostering a balance between convenience and privacy.
-        I worked on the backend to parse travel-time polygons and record location within the zone.     
-      </p>
-      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
-        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'SQLite', 'INRIX API', 'Twilio API', 'Google Places API']"> {{ skill }} </SkillTag>
       </div>
     </ProjectCard>
     <div id="SectionBreak" data-section-number="2" style="height: 25px"/>
