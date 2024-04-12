@@ -30,13 +30,14 @@
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
       <p>
-        I’m Riley, a dedicated and driven sophomore computer science student at
+        I’m Riley, a dedicated and driven computer science student at
         <span style="color: var(--secondary)">Santa Clara University</span>.
-        Confident in my ability to thrive in a collaborative environment and eager to contribute my skills,
-        I aim to expand my expertise as a software engineer.
+        Confident in my ability to thrive in collaborative environments and excited to learn new skills,
+        I am eager to explore diverse opportunities and industries with a shared emphasis on technology,
+        informing my professional career along the way..
       </p>
       <p>
-        My passion for programming began in middle school when I first discovered MIT Scratch.
+        My passion for programming began in middle school when I first discovered drag-and-drop block coding.
         At the time, I didn't even know what a function was, but I resolutely made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
         Today, I thrive on continually progressing my knowledge as I learn new technologies from REST API's to circuits! 
         In my spare time, I’ll be found playing tennis, rendering a new 3D project using Blender, 
@@ -47,6 +48,7 @@
           <div class="resume-link">
             <div style="margin-top: 5px; margin-left: 37.5px; font-weight: 400; font-size: 30px">Résumé</div>
             <div style="margin-left: 35px">
+              <!-- <img src="@/assets/link.svg" style="margin: 10px 0 0 12.5px; width: 25px"/> -->
               <svg width="50px" height="50px">
                 <line x1="25%" y1="50%" x2="75%" y2="50%" style="stroke: black; stroke-width: 2px"/>
                 <line x1="50%" y1="25%" x2="50%" y2="75%" style="stroke: black; stroke-width: 2px"/>
