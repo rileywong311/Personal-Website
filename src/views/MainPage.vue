@@ -151,7 +151,7 @@
       </div>
     </ProjectCard>
     <hr class="line-break" />
-    <ProjectCard name="gourm.ai"
+    <ProjectCard name="gourmAI"
                   type="vid"
                   media="https://www.youtube.com/embed/R8uRnmXLSpo"
                   :links="[
@@ -204,14 +204,23 @@
 
   <!-- Experience Section -->
   <section id="Experience" style="scroll-margin-top: 15vh" class="experience">
-    <h2 id="SectionBreak" data-section-number="3" style="grid-column: 1; margin-bottom: auto">Experience.</h2>
+    <div style="grid-column: 1; width: min(500px, 100%)">
+      <h2 id="SectionBreak" data-section-number="3" style="margin-bottom: auto">Experience.</h2>
+      <div class="experience-image" :style="{'opacity': experienceImage ? 100 : 0, 'transform': experienceImage ? null : 'translate(-25px)'}">
+        <img v-if="experienceImage" :src="require(`@/assets/experience/${experienceImage}`)" class="shadow" style="width: 100%; height: 100%">
+      </div>
+    </div>
     <div style="grid-column: 2">
-      <ExperienceCard dates="Incoming" position="Software Engineer Intern" org="Juniper Networks">
+      <ExperienceCard dates="Incoming" position="Software Engineer Intern" org="Juniper Networks" 
+        @mouseover="experienceImage = 'Juniper.jpg'"
+        @mouseleave="experienceImage = ''">
         <p>
-          Incoming intern for this summer.
+          Incoming intern for this 2024 summer.
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="April 2023 - Present" position="Student Webmaster" org="SCU Association of Computational Machinery">
+      <ExperienceCard dates="April 2023 - Present" position="Club Webmaster" org="SCU Association of Computational Machinery"
+        @mouseover="experienceImage = 'H4H.jpg'"
+        @mouseleave="experienceImage = ''">
         <p>
           ACM is one of the largest student organizations on campus and the leading computer science club 
           for organizing workshops, inviting guest speakers, and hosting hackathons. 
@@ -223,7 +232,9 @@
           and <a href="https://roblox.scuacm.com/" target="_blank" style="color: var(--secondary)">here!</a>
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="May 2023 - August 2023" position="Software Developer Intern" org="Google Summer of Code, IfcOpenShell">
+      <ExperienceCard dates="May 2023 - August 2023" position="Software Developer Intern" org="Google Summer of Code, IfcOpenShell"
+        @mouseover="experienceImage = 'BrickSchema.jpg'"
+        @mouseleave="experienceImage = ''">
         <p>
           The project I worked on focused on enhancing the smart building development tool in IfcOpenShell's Blender plugin, 
           <a href="https://blenderbim.org/" target="_blank" style="color: var(--secondary)">BlenderBIM.</a>
@@ -235,11 +246,13 @@
           <a href="https://gist.github.com/rileywong311/c5dd453740ac7e80107398032698b081"  target="_blank" style="color: var(--secondary)">here</a>.
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="June 2022 - August 2022" position="Student Visitor" org="University California, Berkeley">
+      <ExperienceCard dates="June 2022 - August 2022" position="Student Visitor" org="University California, Berkeley"
+        @mouseover="experienceImage = 'Berkeley.jpg'"
+        @mouseleave="experienceImage = ''">
         <p>
-          As a visiting student for the summer, I took the famous “The Structure and Interpretation of Computer Programs”
-          (<a href="https://cs61a.org/" target="_blank">COMPSCI 61A</a>) as well as
-          “Introduction to Computational Techniques in Physics” (<a href="https://classes.berkeley.edu/content/physics-77" target="_blank">PHYSICS 77</a>).
+          As a visiting student for the summer, I took the respected “The Structure and Interpretation of Computer Programs”
+          (<a href="https://cs61a.org/" target="_blank">COMPSCI 61A</a>) class as well as
+          “Introduction to Computational Techniques in Physics” (<a href="https://classes.berkeley.edu/content/physics-77" target="_blank">PHYSICS 77</a>) class.
           These classes solidified my domain knowledge on the application of programming across diverse fields and paradigms.
         </p>
       </ExperienceCard>
@@ -297,7 +310,8 @@ export default {
         'projects': 2,
         'experience': 3,
         'contact': 4,
-      }
+      },
+      experienceImage: '',
     }
   },
   async mounted() {
@@ -512,12 +526,26 @@ export default {
   background: var(--background2);
   display: grid;
   grid-auto-rows: auto;
-  column-gap: min(400px, 20vw);
+  column-gap: min(150px, 7.5vw);
+}
+
+.experience-image {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25vh;
+  margin-top: 25px;
+  width: 500px;
+  height: 400px;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 1200px) {
   .experience {
     display: block;
+  }
+
+  .experience-image {
+    display: none;
   }
 }
 
