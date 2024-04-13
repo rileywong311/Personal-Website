@@ -40,8 +40,9 @@
         My passion for programming began in middle school when I first discovered drag-and-drop block coding.
         At the time, I didn't even know what a function was, but I resolutely made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
         Today, I thrive on continually progressing my knowledge as I learn new technologies from REST API's to circuits! 
-        In my spare time, I’ll be found playing tennis, rendering a new 3D project using Blender, 
-        or practicing finger-style on the acoustic guitar. 
+        In my spare time, I’ll be found playing <span style="color: var(--secondary)">tennis</span>,
+        rendering a new 3D project using <span style="color: var(--secondary)">Blender</span>, 
+        or practicing finger-style on the <span style="color: var(--secondary)">acoustic guitar</span>. 
       </p>
       <div style="width: 200px">
         <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
@@ -417,7 +418,7 @@ export default {
 }
 
 .hero-to-link {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--secondary);
   /* text-decoration: underline; */
   border-bottom: 1px solid var(--secondary);
