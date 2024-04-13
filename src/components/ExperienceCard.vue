@@ -1,5 +1,5 @@
 <template>
-  <div style="margin: 15px 0 45px">
+  <div style="padding: 10px 0 10px">
     <span style="display: grid; grid-template-columns: auto 1fr">
       <span style="grid-column: 1">{{ dates }}</span>
       <svg style="grid-column: 2; margin-left: 15px; width: 100%; height: 22.5px">

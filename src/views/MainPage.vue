@@ -212,6 +212,7 @@
       </div>
     </div>
     <div style="grid-column: 2">
+      <span class="experience-hint">hover over experiences to reveal additional images!</span>
       <ExperienceCard dates="Incoming" position="Software Engineer Intern" org="Juniper Networks" 
         @mouseover="experienceImage = 'Juniper.jpg'"
         @mouseleave="experienceImage = ''">
@@ -540,12 +541,23 @@ export default {
   transition: 0.5s;
 }
 
+.experience-hint {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.experience-hint::before {
+  content:'✦ ';
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1200px) {
   .experience {
     display: block;
   }
 
-  .experience-image {
+  .experience-image,
+  .experience-hint {
     display: none;
   }
 }
