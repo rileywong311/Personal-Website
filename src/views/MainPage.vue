@@ -220,6 +220,16 @@
           Incoming intern for this 2024 summer.
         </p>
       </ExperienceCard>
+      <ExperienceCard dates="Febuary 2024" position="Competitive Programmer" org="International Collegiate Programming Contest (ICPC)" 
+        @mouseover="experienceImage = 'ICPC.jpg'"
+        @mouseleave="experienceImage = ''">
+        <p>
+          Having dedicated months to honing our skills in competitive programming since the beginning of the school year,
+          my team of 3 representing Santa Clara University entered the ICPC PacNW Regional.
+          Together, we tackled a plethora of coding challenges, combining our collective problem-solving prowess.
+          We clinched the 3rd place position in California, taking home bronze medals, and ranked an exciting 9th overall in the region!
+        </p>
+      </ExperienceCard>
       <ExperienceCard dates="April 2023 - Present" position="Club Webmaster" org="SCU Association of Computational Machinery"
         @mouseover="experienceImage = 'H4H.jpg'"
         @mouseleave="experienceImage = ''">
