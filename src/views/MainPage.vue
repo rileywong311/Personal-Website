@@ -258,7 +258,7 @@
           <a href="https://gist.github.com/rileywong311/c5dd453740ac7e80107398032698b081"  target="_blank" style="color: var(--secondary)">here</a>.
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="June 2022 - August 2022" position="Student Visitor" org="University California, Berkeley"
+      <ExperienceCard dates="June 2022 - August 2022" position="Student Visitor" org="University of California, Berkeley"
         @mouseover="experienceImage = 'Berkeley.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
