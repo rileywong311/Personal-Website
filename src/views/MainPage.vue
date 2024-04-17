@@ -343,7 +343,7 @@ export default {
       allSections.forEach(section => {
         const position = section.getBoundingClientRect();
         if (position.top >= 0 && position.bottom <= window.innerHeight) {
-          this.currentSection = section.getAttribute("data-section-number")
+          this.currentSection = parseInt(section.getAttribute("data-section-number"))
         }
       })
     }, {threshold: 1});
