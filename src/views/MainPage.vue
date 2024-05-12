@@ -243,25 +243,23 @@
           Incoming intern for this 2024 summer.
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="Febuary 2024" position="Competitive Programmer" org="International Collegiate Programming Contest (ICPC)" 
+      <ExperienceCard dates="October 2023 - Present" position="Competitive Programmer" org="International Collegiate Programming Contest (ICPC)" 
         @mouseover="experienceImage = 'ICPC.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
           Having dedicated months to honing our skills in competitive programming since the beginning of the school year,
-          my team of 3 representing Santa Clara University entered the ICPC PacNW Regional.
-          Together, we tackled a plethora of coding challenges, combining our collective problem-solving prowess.
-          We clinched the 3rd place position in California, taking home bronze medals, and ranked an exciting 9th overall in the region!
+          my team of 3 representing Santa Clara University entered the ICPC PacNW Div. 2 Regional.
+          Together, we clinched the 3rd place in California and ranked an exciting 9th overall in the region!
         </p>
       </ExperienceCard>
-      <ExperienceCard dates="April 2023 - Present" position="Club Webmaster" org="SCU Association of Computational Machinery"
+      <ExperienceCard dates="April 2023 - April 2024" position="Club Webmaster" org="SCU Association of Computational Machinery"
         @mouseover="experienceImage = 'H4H.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
-          ACM is one of the largest student organizations on campus and the leading computer science club 
+          SCU ACM is one of the largest student organizations on campus and the leading tech club 
           for organizing workshops, inviting guest speakers, and hosting hackathons. 
-          I work to mantain, update, and expand ACM's sites and content management system.
-          I ensure that ACM's online presence remains seamless, up-to-date, and user-friendly.
-          Access the ACM sites
+          I worked to mantain, update, and expand ACM's sites and cloud management system.
+          Access SCU ACM sites
           <a href="https://scuacm.com" target="_blank" style="color: var(--secondary)">here</a>,
           <a href="https://hackforhumanity.io/" target="_blank" style="color: var(--secondary)">here</a>,
           and <a href="https://roblox.scuacm.com/" target="_blank" style="color: var(--secondary)">here!</a>
@@ -288,7 +286,6 @@
           As a visiting student for the summer, I took the respected “The Structure and Interpretation of Computer Programs”
           (<a href="https://cs61a.org/" target="_blank">COMPSCI 61A</a>) class as well as
           “Introduction to Computational Techniques in Physics” (<a href="https://classes.berkeley.edu/content/physics-77" target="_blank">PHYSICS 77</a>) class.
-          These classes solidified my domain knowledge on the application of programming across diverse fields and paradigms.
         </p>
       </ExperienceCard>
     </div>
