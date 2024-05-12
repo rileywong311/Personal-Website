@@ -30,19 +30,42 @@
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
       <p>
-        I’m Riley, a dedicated and driven computer science student at
-        <span style="color: var(--secondary)">Santa Clara University</span>.
-        Confident in my ability to thrive in collaborative environments and excited to learn new skills,
-        I am eager to explore diverse opportunities and industries with a shared emphasis on technology,
-        informing my professional career along the way..
+        <b>My education: </b>
+        I’m a dedicated and driven Computer Science student at <span style="color: var(--secondary)">Santa Clara University</span>
+         with a minor in Mathematics and Computer Engineering.
       </p>
       <p>
-        My passion for programming began in middle school when I first discovered drag-and-drop block coding.
-        At the time, I didn't even know what a function was, but I resolutely made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
-        Today, I thrive on continually progressing my knowledge as I learn new technologies from REST API's to circuits! 
-        In my spare time, I’ll be found playing <span style="color: var(--secondary)">tennis</span>,
-        rendering a new 3D project using <span style="color: var(--secondary)">Blender</span>, 
+        <b>My journey: </b>
+        My passion for programming began in middle school when I first discovered drag-and-drop coding in MIT Scratch
+        (check out that old work <a href="https://scratch.mit.edu/users/18rwong/projects/" target="_blank">here</a>).
+        However, at the time, I didn't even know what a function was, but I resolutely made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
+        Today, I thrive on continually learning new skills: I am eager to explore diverse opportunities and industries with a
+        shared emphasis on technology, informing my professional career along the way.
+      </p>
+      <p>
+        <b>My hobbies: </b>
+        When I'm not in the dungeons studying for Math, I’ll be found playing <span style="color: var(--secondary)">tennis</span>,
+        rendering a new 3D project using <span style="color: var(--secondary)">Blender</span>
+        (here's my <a href="https://youtu.be/QGM3tFAf_bQ" target="_blank">demo reel</a>), 
         or practicing finger-style on the <span style="color: var(--secondary)">acoustic guitar</span>. 
+      </p>
+      <p>
+        Here are some other random fun facts about me:
+        <ul>
+          <li>
+            I love games! 
+            My favorite video games include <i>Minecraft</i>, <i>Rocket League</i>, and <i>Stardew Valley</i>.
+            My favorite board games include <i>Love Letter</i>, <i>Terraforming Mars</i>, <i>King of Tokyo</i>, and <i>Blood Rage</i>. 
+            Let's play!
+          </li>
+          <li>
+            I started using Duolingo on a whim, now I have a {{ Math.round((((new Date().getTime()) - (new Date("09/09/2019").getTime())) / (1000 * 3600 * 24))) }}-day
+            streak learning Spanish and Japanese. Curious? Ask me about these languages!
+          </li>
+          <li>
+            I grew up in Berkeley—proud of its diversity and top-notch educational institutions. Feel free to chat about my hometown!
+          </li>
+        </ul>
       </p>
       <div style="width: 200px">
         <a href="documents/resume.pdf" target="_black" style="color: black; text-decoration: none">
