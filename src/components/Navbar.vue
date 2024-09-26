@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{shadow: showShadow}" style="position: fixed; top: 0; left: 0; width: min(100%, 1800px); background: var(--background); z-index: 2">
+  <nav :class="{shadow: showShadow}" style="position: fixed; top: 0; left: 0; width: min(100%, 1800px); background: var(--background); z-index: 99">
 
     <span @click="toHero" @keyup.enter="toHero" id="right" style="margin-top: min(30px, 3vh); display: block; float: left; margin-left: 5%">
       <span role="tab" tabindex="0" class="main-link">RW.</span>
@@ -183,7 +183,7 @@ export default {
   top: 0;
   padding: 20vh 20% 0;
   margin: 0;
-  z-index: 1;
+  z-index: 98;
   visibility: hidden;
   opacity: 0;
   background: white;

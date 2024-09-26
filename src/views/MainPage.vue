@@ -44,6 +44,17 @@
         Today, I thrive on continually learning new skills, and I am eager to explore diverse opportunities and industries with a
         shared emphasis on technology, informing my professional career along the way.
       </p>
+      <Carousel 
+      :images="[
+          'assets/about/Card0.jpg',
+          'assets/about/Card1.jpg',
+          'assets/about/Card2.jpg',
+          'assets/about/Card3.jpg',
+          'assets/about/Card4.jpg',
+          'assets/about/Card5.jpg',
+          'assets/about/Card6.jpg'
+        ]"
+        style="margin: auto"/>
       <p>
         <b>My Hobbies: </b>
         When I'm not studying for CS or Math, I’ll be found playing <span style="color: var(--secondary)">tennis</span>,
@@ -321,6 +332,7 @@ import SkillTag from '@/components/SkillTag.vue';
 import ExperienceCard from '@/components/ExperienceCard.vue';
 import FormCard from '@/components/FormCard.vue';
 import Footer from '@/components/Footer.vue';
+import Carousel from '@/components/Carousel.vue';
 
 export default {
   name: 'Mainpage',
@@ -332,6 +344,7 @@ export default {
     ExperienceCard,
     FormCard,
     Footer,
+    Carousel,
   },
   data: () => {
     return {
