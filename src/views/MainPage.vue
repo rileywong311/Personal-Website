@@ -30,40 +30,42 @@
     <h2 id="SectionBreak" data-section-number="1" style="grid-column: 1; margin-bottom: auto">About Me.</h2>
     <div style="grid-column: 2">
       <p>
-        <b>My education: </b>
+        <b>My Education: </b>
         I’m a dedicated and driven Computer Science student at <span style="color: var(--secondary)">Santa Clara University</span>
-         with a minor in Mathematics and Computer Engineering.
+        with a minor in Mathematics and Computer Engineering.
+        My official emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have many related classes under my belt,
+        but I have also taken a breadth of courses from <i>Automata Theory</i> to <i>Computer Security</i>.
       </p>
       <p>
-        <b>My journey: </b>
+        <b>My Journey: </b>
         My passion for programming began in middle school when I first discovered drag-and-drop coding in MIT Scratch
         (check out that old work <a href="https://scratch.mit.edu/users/18rwong/projects/" target="_blank">here</a>).
-        However, at the time, I didn't even know what a function was, but I resolutely made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
-        Today, I thrive on continually learning new skills: I am eager to explore diverse opportunities and industries with a
+        However, at the time, I didn't even know what a function was, yet resolutely I still made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
+        Today, I thrive on continually learning new skills, and I am eager to explore diverse opportunities and industries with a
         shared emphasis on technology, informing my professional career along the way.
       </p>
       <p>
-        <b>My hobbies: </b>
-        When I'm not in the dungeons studying for Math, I’ll be found playing <span style="color: var(--secondary)">tennis</span>,
+        <b>My Hobbies: </b>
+        When I'm not studying for CS or Math, I’ll be found playing <span style="color: var(--secondary)">tennis</span>,
         rendering a new 3D project using <span style="color: var(--secondary)">Blender</span>
         (here's my <a href="https://youtu.be/QGM3tFAf_bQ" target="_blank">demo reel</a>), 
         or practicing finger-style on the <span style="color: var(--secondary)">acoustic guitar</span>. 
       </p>
       <p>
-        Here are some other random fun facts about me:
+        Here are some other fun facts about me:
         <ul>
           <li>
             I love games! 
             My favorite video games include <i>Minecraft</i>, <i>Rocket League</i>, and <i>Stardew Valley</i>.
-            My favorite board games include <i>Love Letter</i>, <i>Terraforming Mars</i>, <i>King of Tokyo</i>, and <i>Blood Rage</i>. 
+            My favorite board games include <i>Love Letter</i>, <i>Terraforming Mars</i>, <i>King of Tokyo</i>, and <i>Marvel's Legendary</i>. 
             Let's play!
           </li>
           <li>
-            I started using Duolingo on a whim, now I have a {{ Math.round((((new Date().getTime()) - (new Date("09/09/2019").getTime())) / (1000 * 3600 * 24))) }}-day
-            streak learning Spanish and Japanese. Curious? Ask me about these languages!
+            I started using Duolingo on a whim, now I have a {{ Math.round((((new Date().getTime()) - (new Date("09/10/2019").getTime())) / (1000 * 3600 * 24))) }}-day
+            streak learning Spanish and Japanese. If your curious, ask me about these languages!
           </li>
           <li>
-            I grew up in Berkeley—proud of its diversity and top-notch educational institutions. Feel free to chat about my hometown!
+            I grew up in Berkeley—feel free to chat about my hometown!
           </li>
         </ul>
       </p>
@@ -106,7 +108,7 @@
             <li><i class="devicon-flask-original"/> Flask</li>
             <li><i class="devicon-vuejs-plain"/> Vue.js</li>
             <li><i class="devicon-react-original"/> React.js</li>
-            <li><i class="devicon-flutter-plain"/>Flutter</li>
+            <li><i class="devicon-flutter-plain"/> Flutter</li>
           </ul>
         </div>
         <div>
@@ -119,6 +121,7 @@
             <li><i class="devicon-figma-plain"/> Figma</li>
             <li><i class="devicon-qt-original"/> Qt</li>
             <li>(Stack Overflow)</li>
+            <li>(ChatGPT)</li>
           </ul>
         </div>
       </div>
@@ -240,7 +243,7 @@
         @mouseover="experienceImage = 'Juniper.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
-          Incoming intern for this 2024 summer.
+          I joined Global Services to deploy a LAMP full-stack log analyzer API and website for switch/router/firewall operating systems, working to streamline configuration checks and troubleshooting with custom knowledge base of 800+ error signatures to solve customer cases.
         </p>
       </ExperienceCard>
       <ExperienceCard dates="October 2023 - Present" position="Competitive Programmer" org="International Collegiate Programming Contest (ICPC)" 
@@ -283,9 +286,9 @@
         @mouseover="experienceImage = 'Berkeley.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
-          As a visiting student for the summer, I took the respected “The Structure and Interpretation of Computer Programs”
-          (<a href="https://cs61a.org/" target="_blank">COMPSCI 61A</a>) class as well as
-          “Introduction to Computational Techniques in Physics” (<a href="https://classes.berkeley.edu/content/physics-77" target="_blank">PHYSICS 77</a>) class.
+          As a visiting student for the summer, I took the popular “The Structure and Interpretation of Computer Programs”
+          (<a href="https://cs61a.org/" target="_blank">COMPSCI 61A</a>) class as well as the data science class
+          “Introduction to Computational Techniques in Physics” (<a href="https://classes.berkeley.edu/content/physics-77" target="_blank">PHYSICS 77</a>).
         </p>
       </ExperienceCard>
     </div>
