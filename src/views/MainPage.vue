@@ -254,7 +254,7 @@
         @mouseover="experienceImage = 'Juniper.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
-          I joined Global Services to deploy a LAMP full-stack log analyzer API and website for switch/router/firewall operating systems, working to streamline configuration checks and troubleshooting with custom knowledge base of 800+ error signatures to solve customer cases.
+          I joined Global Services to deploy a LAMP full-stack log analyzer API and website for switch/router/firewall operating systems, working to streamline configuration checks and troubleshooting with a custom knowledge base of 800+ error signatures to solve customer reported cases.
         </p>
       </ExperienceCard>
       <ExperienceCard dates="October 2023 - Present" position="Competitive Programmer" org="International Collegiate Programming Contest (ICPC)" 
