@@ -250,7 +250,7 @@
     </div>
     <div style="grid-column: 2">
       <span class="experience-hint">hover over experiences to reveal additional images!</span>
-      <ExperienceCard dates="Incoming" position="Software Engineer Intern" org="Juniper Networks" 
+      <ExperienceCard dates="June 2023 - September 2023" position="Software Engineer Intern" org="Juniper Networks" 
         @mouseover="experienceImage = 'Juniper.jpg'"
         @mouseleave="experienceImage = ''">
         <p>
