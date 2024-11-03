@@ -33,8 +33,8 @@
         <b>My Education: </b>
         I’m a dedicated and driven Computer Science student at <span style="color: var(--secondary)">Santa Clara University</span>
         with a minor in both Mathematics and Computer Engineering.
-        My officially declared emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have taken many related classesd,
-        but I have also sought breadth in courses from <i>Automata Theory</i> to <i>Computer Security</i>.
+        My officially declared emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have taken many related classes,
+        but I have also pursued a breadth of courses from <i>Automata Theory</i> to <i>Computer Security</i>.
       </p>
       <p>
         <b>My Journey: </b>
