@@ -32,16 +32,16 @@
       <p>
         <b>My Education: </b>
         I’m a dedicated and driven Computer Science student at <span style="color: var(--secondary)">Santa Clara University</span>
-        with a minor in Mathematics and Computer Engineering.
-        My official emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have many related classes under my belt,
-        but I have also taken a breadth of courses from <i>Automata Theory</i> to <i>Computer Security</i>.
+        with a minor in both Mathematics and Computer Engineering.
+        My officially declared emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have taken many related classesd,
+        but I have also sought breadth in courses from <i>Automata Theory</i> to <i>Computer Security</i>.
       </p>
       <p>
         <b>My Journey: </b>
         My passion for programming began in middle school when I first discovered drag-and-drop coding in MIT Scratch
         (check out that old work <a href="https://scratch.mit.edu/users/18rwong/projects/" target="_blank">here</a>).
         However, at the time, I didn't even know what a function was, yet resolutely I still made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
-        Today, I thrive on continually learning new skills, and I am eager to explore diverse opportunities and industries with a
+        Today, I thrive on continually learning new skills in computer science, and I am eager to explore diverse opportunities and industries with a
         shared emphasis on technology, informing my professional career along the way.
       </p>
       <Carousel 
