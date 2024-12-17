@@ -25,11 +25,11 @@ export default {
 <style scoped>
 img {
   width: 50px;
-  transition: 0.8s;
+  transition: 0.15s;
 }
 
 img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .center {

@@ -48,7 +48,7 @@ export default {
 }
 
 img, span {
-  transition: 1s
+  transition: 0.2s
 }
 
 a:hover {

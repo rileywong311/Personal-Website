@@ -5,10 +5,10 @@
   <div id="HeroPaddingTop" class="hero-padding"/>
   <section id="Hero" class="hero">
     <div id="SectionBreak" data-section-number="0" style="overflow: hidden">
-      <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Hi there!</h1>
+      <h1 ref="heroHeading1" style="transition: ease-in-out 1.25s" class="outside-screen">Welcome!</h1>
       <h1 ref="heroHeading2" style="transition: ease-in-out 1.5s" class="outside-screen">I'm <span style="color: var(--secondary)">Riley Wong.</span></h1>
-      <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 70ch" class="outside-screen">
-        I'm committed to fostering independence, communication, and the opportunity to learn from others! Feel free to
+      <p ref="heroParagraph" style="transition: ease-in-out 1.75s; max-width: 59ch" class="outside-screen">
+        I'm prospective software engineer committed to fostering independence, communication, and the opportunity to learn from others! Feel free to
         <span role="tab" tabindex="0" @click="toProjects" @keyup.enter="toProjects" class="hero-to-link">explore my work below</span>
         or <span role="tab" tabindex="0" @click="toContact" @keyup.enter="toContact" class="hero-to-link">reach out to me here!</span>
       </p>
@@ -33,7 +33,7 @@
         <b>My Education: </b>
         I’m a dedicated and driven Computer Science student at <span style="color: var(--secondary)">Santa Clara University</span>
         with a minor in both Mathematics and Computer Engineering.
-        My officially declared emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have taken many related classes,
+        My declared emphasis is <span style="color: var(--secondary)">Data Science</span>, where I have taken many related classes,
         but I have also pursued a breadth of courses from <i>Automata Theory</i> to <i>Computer Security</i>.
       </p>
       <p>
@@ -41,7 +41,7 @@
         My passion for programming began in middle school when I first discovered drag-and-drop coding in MIT Scratch
         (check out that old work <a href="https://scratch.mit.edu/users/18rwong/projects/" target="_blank">here</a>).
         However, at the time, I didn't even know what a function was, yet resolutely I still made my 1000 lines of repeated code work.&nbsp;.&nbsp;.
-        Today, I thrive on continually learning new skills in computer science, and I am eager to explore diverse opportunities and industries with a
+        Today, I thrive on continually learning new skills in Computer Science, and I am eager to explore diverse opportunities and industries with a
         shared emphasis on technology, informing my professional career along the way.
       </p>
       <Carousel 
@@ -67,16 +67,17 @@
         <ul>
           <li>
             I love games! 
-            My favorite video games include <i>Minecraft</i>, <i>Rocket League</i>, and <i>Stardew Valley</i>.
+            My favorite video games include <i>Minecraft</i>,
+            <i><a href="https://youtu.be/AHD0pEyAHJQ?si=TmpkKYEzP0iJJWcX" target="_blank">Rocket League</a></i>, and <i>Stardew Valley</i>.
             My favorite board games include <i>Love Letter</i>, <i>Terraforming Mars</i>, <i>King of Tokyo</i>, and <i>Marvel's Legendary</i>. 
             Let's play!
           </li>
           <li>
-            I started using Duolingo on a whim, now I have a {{ Math.round((((new Date().getTime()) - (new Date("09/10/2019").getTime())) / (1000 * 3600 * 24))) }}-day
-            streak learning Spanish and Japanese. If your curious, ask me about these languages!
+            I started using Duolingo on a whim, now I have a {{ Math.round((((new Date().getTime()) - (new Date("09/11/2019").getTime())) / (1000 * 3600 * 24))) }}-day
+            streak learning Spanish and Japanese. Feel free to <a href="https://www.duolingo.com/profile/Riley69311" target="_blank">add me as a friend!</a>
           </li>
           <li>
-            I grew up in Berkeley—feel free to chat about my hometown!
+            I went to middle school and high school in Berkeley—feel free to chat about my hometown!
           </li>
         </ul>
       </p>
@@ -150,26 +151,11 @@
                     {link: 'https://www.brickdle.com/', name: 'Play here!'}
                   ]">
       <p>
-        Parsed catalog of LEGO sets to create a Wordle-like game where users guess number of LEGO’s in the picture.
+        My friend and I parsed a catalog of LEGO sets to create a Wordle-like game where you guess the number of LEGO’s in the picture.
         We are releasing global daily puzzles!
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
         <SkillTag v-for="skill in ['Flutter', 'Python', 'SQL', 'Google Analytics', 'BigQuery']"> {{ skill }} </SkillTag>
-      </div>
-    </ProjectCard>
-    <hr class="line-break" />
-    <ProjectCard name="Park, Bus, & Jam"
-                  type="vid"
-                  media="https://www.youtube.com/embed/GFKy2b_VfmI"
-                  :links="[
-                    {link: 'https://github.com/rileywong311/Park-Bus-and-Jam', name: 'GitHub'}
-                  ]">
-      <p>
-        Traffic congestion and other stresses of transportation can quickly take away from a once-in-a-lifetime concert experience.
-        This app takes care of all the stress, providing precise routing, cheap/available parking spaces, and an optimized last leg of public transport to your venue.
-      </p>
-      <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
-        <SkillTag v-for="skill in ['Dart', 'Python', 'Flutter', 'Flask', 'INRIX API', 'Ticket Master API', 'Google Services API']"> {{ skill }} </SkillTag>
       </div>
     </ProjectCard>
     <hr class="line-break" />
@@ -181,11 +167,11 @@
                     {link: 'https://gist.github.com/rileywong311/c5dd453740ac7e80107398032698b081', name: 'Final Report'}
                   ]">
       <p>
-        This project further bridges the IfcOpenShell and BrickSchema open-source communities and shared mission to evolve the common exchange of building information.
-        This project allows facility management operators to seamlessly edit equipment data and relationships as they continue monitoring the building.
+        This project further bridges the IfcOpenShell and BrickSchema open-source communities and shared mission to evolve the common exchange of building information
+        by allowing facility management operators to seamlessly edit equipment data and relationshipsin in the continued monitoring of a building.
       </p>
       <div style="display: flex; row-gap: 12px; column-gap: 5px; flex-wrap: wrap">
-        <SkillTag v-for="skill in ['Python', 'SPARQL', 'Blender API', 'Plugin', 'Python Unit Tests', 'Feature Tests', 'Smart Buildings', 'Building Information Models', 'IFC', 'BrickSchema']"> {{ skill }} </SkillTag>
+        <SkillTag v-for="skill in ['Python', 'SPARQL', 'Blender API', 'Unit Tests', 'Feature Tests', 'Smart Buildings', 'BIM', 'IFC', 'BrickSchema']"> {{ skill }} </SkillTag>
       </div>
     </ProjectCard>
     <hr class="line-break" />
@@ -196,7 +182,7 @@
                     {link: 'https://github.com/rileywong311/CalHack-AI-2023', name: 'GitHub'}
                   ]">
       <p>
-       An AI-powered cooking assistant designed to provide users with an intuitive, seamless, and delightful culinary experience. 
+       My team and I built an AI-powered cooking assistant designed to provide users with an intuitive and seamless culinary experience. 
        I primarily worked on the frontend, ensuring a user-friendly interface that guides the cooking process,
        but I also collaborated closely with the backend team to optimize prompts as we focused on parsing GPT-4 effectively.
       </p>
@@ -229,7 +215,7 @@
                     {link: 'https://github.com/rileywong311/Logistic-Map-PRNG', name: 'GitHub'}
                   ]">
       <p>
-        Distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation;
+        I distilled the chaotic region of the logistic map as a source of entropy for intrinsic random number generation;
         this tapped into the logistic map's inherent unpredictability.
         Afterward, I ran a series of statistical tests to evaluate that the generator met the criteria for randomness.
       </p>
@@ -454,7 +440,7 @@ export default {
 }
 
 .bio-pic {
-  --size: 400px;
+  --size: 350px;
   width: var(--size);
   height: var(--size);
   border: 4px solid var(--secondary);
@@ -630,7 +616,7 @@ export default {
   color: var(--secondary);
   padding: 10px 30px 10px;
   border-radius: 999px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .email:hover {

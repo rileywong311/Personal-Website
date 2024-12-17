@@ -120,7 +120,7 @@ export default {
   margin: 10px;
   padding: 5px 15px 5px;
   border-radius: 999px;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s;
 }
 
 .main-link:hover,
