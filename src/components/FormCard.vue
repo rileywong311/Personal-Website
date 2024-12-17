@@ -71,7 +71,7 @@ textarea {
 }
 
 .submit-button:hover {
-  transform: scale(1.07);
+  background: black;
   cursor: pointer;
 }
 
