@@ -4,7 +4,7 @@
       <hr />
     </div>
     <span style="margin: 30px auto; text-align: center">Made with <span style="color: #41B883">Vue.js</span> and <span style="color: #5e88ea">CSS</span> from the ground up!</span>
-    <span @click="toHero" class="copyright">2024 by Riley Wong</span>
+    <span @click="toHero" class="copyright">2025 by Riley Wong</span>
   </section>
 </template>
 
