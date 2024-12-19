@@ -39,7 +39,7 @@ html, body {
 }
 
 h1 {
-  font-size: 6.5rem;
+  font-size: 6.25rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.15;
