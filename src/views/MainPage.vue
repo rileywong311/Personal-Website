@@ -19,8 +19,9 @@
         <MediaLogos />
       </div>
     </div>
-    <div class="bio-pic-container">
-      <img src="@/assets/biopic.jpg" alt="Bio Picture" ref="heroImage" style="transition: 3s" class="bio-pic hidden" />
+    <div class="bio-pic-container" style="position: relative">
+      <img @click="clicker" src="@/assets/biopic.jpg" draggable="false" alt="Bio Picture" ref="heroImage" class="bio-pic transition hidden" />
+      <Clicker id="clicker" @delete-clicks="deleteClicks" @spend-clicks="spendClicks" :clicks="clicks" class="hidden" />
     </div>
   </section>
   <div id="SectionBreak" class="hero-padding"/>
@@ -319,6 +320,7 @@ import ExperienceCard from '@/components/ExperienceCard.vue';
 import FormCard from '@/components/FormCard.vue';
 import Footer from '@/components/Footer.vue';
 import Carousel from '@/components/Carousel.vue';
+import Clicker from '@/components/Clicker.vue';
 
 export default {
   name: 'Mainpage',
@@ -331,6 +333,7 @@ export default {
     FormCard,
     Footer,
     Carousel,
+    Clicker,
   },
   data: () => {
     return {
@@ -346,6 +349,9 @@ export default {
         'contact': 4,
       },
       experienceImage: '',
+      clicked: false,
+      clicks: Number(localStorage.getItem('clicks')),
+      intervals: []
     }
   },
   async mounted() {
@@ -394,14 +400,57 @@ export default {
     async load() {
       // await document.
       setTimeout( () => {
-        this.$refs.heroHeading1.classList.remove('outside-screen');
-        this.$refs.heroHeading2.classList.remove('outside-screen');
+        this.$refs.heroHeading1.classList?.remove('outside-screen');
+        this.$refs.heroHeading2.classList?.remove('outside-screen');
         setTimeout( () => {
-          this.$refs.heroParagraph.classList.remove('outside-screen')
-          this.$refs.heroImage.classList.remove('hidden');
-          this.$refs.heroLinks.classList.remove('hidden');
+          this.$refs.heroParagraph.classList?.remove('outside-screen')
+          this.$refs.heroImage.classList?.remove('hidden');
+          this.$refs.heroLinks.classList?.remove('hidden');
         }, 800)
       }, 200)
+    },
+    async clicker() {
+      if (!this.clicked) {
+        this.clicked = true;
+        document.getElementById("clicker").classList?.remove('hidden');
+        this.$refs.heroImage.classList?.remove('transition');
+        let interval = setInterval(() => {
+          this.clicks += Number(localStorage.getItem('interns'));
+          this.clicks += Number(localStorage.getItem('juniors')) * 7;
+        }, 1000);
+        this.intervals.push(interval)
+        interval = setInterval(() => {
+          this.clicks += Number(localStorage.getItem('seniors')) * 9;
+          this.clicks += Number(localStorage.getItem('leads')) * 36;
+        }, 500);
+        this.intervals.push(interval)
+        interval = setInterval(() => {
+          this.clicks += Number(localStorage.getItem('ctos')) * 50;
+          this.clicks += Number(localStorage.getItem('ceos')) * 150;
+          this.clicks += Number(localStorage.getItem('rileys')) * 1000;
+        }, 200);
+        this.intervals.push(interval)
+        interval = setInterval(() => {
+          localStorage.setItem('clicks', this.clicks)
+        }, 10);
+        this.intervals.push(interval)
+      }
+      this.clicks++;
+      localStorage.setItem('clicks', this.clicks);
+      this.$refs.heroImage.classList.add('click');
+      setTimeout( () => {
+        this.$refs.heroImage.classList?.remove('click');
+      }, 80)
+    },
+    async spendClicks(spent){
+      this.clicks -= spent;
+    },
+    async deleteClicks(){
+      this.intervals.map(clearInterval);
+      setTimeout(() => {
+        localStorage.removeItem('clicks');
+        window.location.reload()
+      }, 1000);
     }
   }
 }
@@ -440,14 +489,25 @@ export default {
 }
 
 .bio-pic {
-  --size: 350px;
+  --size: 375px;
   width: var(--size);
   height: var(--size);
   border: 4px solid var(--secondary);
   border-radius: 999px;
   object-fit: cover;
-  z-index: -1;
   /* box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px; */
+}
+
+.bio-pic:hover {
+  cursor: pointer;
+}
+
+.transition {
+  transition: 3s;
+}
+
+.click {
+  transform: scale(0.95);
 }
 
 .hero-to-link {
